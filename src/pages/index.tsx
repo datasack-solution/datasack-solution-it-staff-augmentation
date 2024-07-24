@@ -8,7 +8,6 @@ import ManagedServices from "@/components/ManagedServices";
 import PricingPage from "@/components/Pricing";
 import { EuiButton, EuiCard, EuiFlexGroup, EuiFlexItem, EuiGlobalToastList, EuiImage, EuiPage, EuiPageBody, EuiSpacer } from "@elastic/eui";
 import Head from "next/head";
-//safasf
 import Image from "next/image";
 import { Fragment, FunctionComponent, useEffect, useState } from "react";
 
@@ -20,7 +19,7 @@ const Home: FunctionComponent = () => {
       setToasts([{
         id: 'pricing-toast',
         title: 'Do you want to know pricing?',
-        text: <EuiButton onClick={() => document.getElementById('window-pricing')?.scrollIntoView({ behavior: 'smooth' })}>Get Pricing</EuiButton>
+        text: <EuiButton style={{ backgroundColor: 'orange', color: 'white' }} onClick={() => document.getElementById('window-pricing')?.scrollIntoView({ behavior: 'smooth' })}>Get Pricing</EuiButton>
       }]);
     }, 10000);
 
@@ -76,7 +75,7 @@ const Home: FunctionComponent = () => {
 
           <div>
             <div className="image-container">
-              <img  src="/background_vector.webp" alt="background" className="background-img" />
+              <img className="background-img" src="/background_vector.webp" alt="background" />
               <div className="image-overlay"></div>
             </div>
             <div className="title-wrap">
@@ -84,21 +83,23 @@ const Home: FunctionComponent = () => {
               <h1 className="title">Explore IT Staff Augmentation Services in Dammam and Riyadh</h1>
             </div>
             <EuiGlobalToastList
+              side="right"
               toasts={toasts}
               dismissToast={() => setToasts([])}
               toastLifeTimeMs={1000000}
             />
           </div>
 
-
           <div id="analytics-section" className="analytics-section">
-            <div style={{ paddingBottom: '50px' }}>
-              <EuiCard hasBorder={false} title="Augment your software team with IT professionals via IT Team Augmentation Services in Dammam and Riyadh." />
-            </div>
-
-          
-          <div id="window_view_analytics">
-              <EuiFlexGroup gutterSize="l"  key={12}>
+            <div id="window_view_analytics">
+              <div style={{ paddingBottom: '50px' }}>
+                <EuiCard hasBorder={true}
+                  title=''
+                >
+                  <p style={{fontSize:'25px'}}>Augment your software team with IT professionals via IT Team Augmentation Services in Dammam and Riyadh.</p>
+                </EuiCard>
+              </div>
+              <EuiFlexGroup gutterSize="l" key={12}>
                 {analyticsIcons.map((item, idx) => (
                   <EuiFlexItem key={idx}>
                     <EuiCard
@@ -108,16 +109,23 @@ const Home: FunctionComponent = () => {
                     />
                   </EuiFlexItem>))}
               </EuiFlexGroup>
-              </div>
+            </div>
 
             <div id="mobile_view_analytics">
-              <AnalyticsSlider />
+              <div style={{ paddingBottom: '50px' }}>
+                <EuiCard hasBorder={true}
+                  title=''
+                  description="Augment your software team with IT professionals via IT Team Augmentation Services in Dammam and Riyadh."
+                >
+                  <AnalyticsSlider />
+                </EuiCard>
+              </div>
             </div>
 
             <div id="benefit_mobile_view">
               <div className="benefit-left-section benefit-left-section-mobile">
-                <h2 style={{ fontSize: '30px', paddingTop: '10px' }}>Benefits of <span style={{ color: 'orange' }}>IT Resource Augmentation </span>Services in Dammam and Riyadh</h2>
-                <p style={{ fontSize: '18px' }}>IT Staff Augmentation Services in Dammam and Riyadh provided by Datasack Solutions are advantageous as they offer the following benefits.</p>
+                <h2 style={{ fontSize: '25px', paddingTop: '10px' }}>Benefits of <span style={{ color: 'orange' }}>IT Resource Augmentation </span>Services in Dammam and Riyadh</h2>
+                <p style={{ fontSize: '15px' }}>IT Staff Augmentation Services in Dammam and Riyadh provided by Datasack Solutions are advantageous as they offer the following benefits.</p>
               </div>
               <BenefitsSlider />
             </div>
@@ -126,20 +134,14 @@ const Home: FunctionComponent = () => {
               <Benefits />
             </div>
 
-            {/* <div className="image-container"> */}
-            {/* <EuiTitle><h2 style={{color:'black', textAlign:'center', fontSize:'3px',paddingTop: '10px'}}>Managed <span style={{color:'orange'}}>Services</span></h2></EuiTitle>
-        <p >IT Staff Augmentation Services in Dammam and Riyadh provided by Datasack Solutions are advantageous as they offer the following benefits.</p> */}
-          <EuiSpacer size="l"/>
-          <div id="benefit_mobile_view">
-         <div className="benefit-left-section benefit-left-section-mobile">
-         <h2 style={{ fontSize: '30px', paddingTop: '10px' }}>Managed <span style={{ color: 'orange' }}>Services </span></h2>
-         <p style={{ fontSize: '18px' }}>IT Staff Augmentation Services in Dammam and Riyadh provided by Datasack Solutions are advantageous as they offer the following benefits.</p>
-          </div>
-          </div>
+            <EuiSpacer size="l" />
+            <div id="benefit_mobile_view">
+              <div className="benefit-left-section benefit-left-section-mobile">
+                <h2 style={{ fontSize: '25px', paddingTop: '10px' }}>Managed <span style={{ color: 'orange' }}>Services </span></h2>
+                <p style={{ fontSize: '15px' }}>DataSack assembles your dream team on-demand, providing expertise without the hassle of full-time hiring. Contract resources as needed for specific projects or skills.</p>
+              </div>
+            </div>
             <ManagedServices />
-
-
-
             <div id="window-pricing">
               <PricingPage />
             </div>
