@@ -111,7 +111,7 @@ const CustomTechInput: FunctionComponent<CustomeTechInputProps> = ({
                             <EuiFlexItem grow={false} style={{ minWidth: '100px', padding: '0 5px' }}>
                                 {customTech.isEditing ? (
                                     <EuiFieldText
-                                        placeholder="Enter Tech"
+                                        placeholder="Enter Technology"
                                         value={customTech.tech}
                                         onChange={(e) => handleTechChange(index, e.target.value)}
                                         aria-label="Enter custom tech"
@@ -119,7 +119,7 @@ const CustomTechInput: FunctionComponent<CustomeTechInputProps> = ({
                                     />
                                 ) : (
                                     <EuiFieldText
-                                        placeholder="Enter Tech"
+                                        placeholder="Enter Technology"
                                         value={customTech.tech}
                                         onChange={(e) => handleTechChange(index, e.target.value)}
                                         aria-label="Enter custom tech"
@@ -191,7 +191,7 @@ const CustomTechInput: FunctionComponent<CustomeTechInputProps> = ({
                 ))}
             </div>
             <EuiSpacer size="m" />
-            <div style={{ cursor: 'pointer', display: 'inline-flex', boxShadow: "rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px", padding: '5px', alignItems: 'center', borderRadius: '5%' }} onClick={addCustomTech}>
+            <div style={{ cursor: 'pointer',backgroundColor:"#F8F7F5", display: 'inline-flex', boxShadow: "rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px", padding: '5px', alignItems: 'center', borderRadius: '5%' }} onClick={addCustomTech}>
                 <p style={{ color: 'black' }}>Add Tech</p>
                 <EuiButtonIcon
                     iconType="plusInCircleFilled"

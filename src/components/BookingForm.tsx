@@ -1,4 +1,4 @@
-import { EuiButtonIcon, EuiFlexGroup, EuiFlexItem, EuiHorizontalRule, EuiImage, EuiPanel, EuiSkeletonCircle, EuiSkeletonLoading, EuiSkeletonRectangle, EuiSkeletonText, EuiSkeletonTitle, EuiSpacer, EuiText } from '@elastic/eui';
+import { EuiButtonIcon, EuiFlexGroup, EuiFlexItem, EuiHorizontalRule, EuiIcon, EuiImage, EuiPanel, EuiSkeletonCircle, EuiSkeletonLoading, EuiSkeletonRectangle, EuiSkeletonText, EuiSkeletonTitle, EuiSpacer, EuiText } from '@elastic/eui';
 import emailJs, { EmailJSResponseStatus } from '@emailjs/browser';
 import { Fragment, FunctionComponent, useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
@@ -347,8 +347,12 @@ const BookingForm: FunctionComponent<BookingFormProps> = ({
               </Fragment>}
               <EuiHorizontalRule size='half' />
               <h3 className='contact-us'>Contact us</h3>
-              <p>+966-34221121</p>
-              <p className='email-link' >sales@datasack.in</p>
+              <EuiIcon type="mobile" color='orange' />
+              <a href='tel:+966560858596'>+966-560858596</a>
+              <br />
+              <EuiIcon type="email" color='orange' />
+              <a className='email-link' href='mailto:sales@datasack.in'>sales@datasack.in</a>
+
               <div style={{ height: '20px' }}></div>
               <h4>Customers who trust us</h4>
 

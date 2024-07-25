@@ -60,6 +60,19 @@
     cursor: pointer;
   }
 
+  .contactSection a{
+    text-align: left;
+    font-size: 18px;
+    padding-left:10px ;
+    color: white;
+  }
+
+  .contactSection a:hover{
+    color: rgb(155, 155, 198);
+    cursor: pointer;
+  }
+
+
   .form {
     display: flex;
     flex-direction: column;

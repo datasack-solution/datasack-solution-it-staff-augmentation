@@ -77,7 +77,7 @@ const HeaderComponent: FunctionComponent = () => {
                     <EuiText>
                       <p><HeaderLink onClick={() => {
                         document.getElementById('window-pricing')?.scrollIntoView({ behavior: 'smooth' })
-                      }}>Get Pricing</HeaderLink></p>
+                      }}>Get <span style={{color:'orange',fontWeight:'bold'}}>Pricing</span></HeaderLink></p>
                       <p><HeaderLink onClick={() => {
                         document.getElementById('managed-service-section')?.scrollIntoView({ behavior: 'smooth' })
                       }}>Managed Services</HeaderLink></p>
