@@ -45,7 +45,7 @@ const Home: FunctionComponent = () => {
 
   return (
     <Fragment>
-      <Script src="https://www.googletagmanager.com/gtag/js?id=AW-16583886159"
+      <Script id="google-analytics-tag" src="https://www.googletagmanager.com/gtag/js?id=AW-16583886159"
         strategy="afterInteractive">
       </Script>
       <Script
