@@ -8,8 +8,8 @@ import ManagedServices from "@/components/ManagedServices";
 import PricingPage from "@/components/Pricing";
 import { EuiButton, EuiCard, EuiFlexGroup, EuiFlexItem, EuiGlobalToastList, EuiImage, EuiPage, EuiPageBody, EuiSpacer } from "@elastic/eui";
 import Head from "next/head";
-import Image from "next/image";
 import { Fragment, FunctionComponent, useEffect, useState } from "react";
+import Script from 'next/script'
 
 const Home: FunctionComponent = () => {
   const [toasts, setToasts] = useState<Array<{ id: string, title: string, text: React.ReactNode }>>([]);
@@ -45,6 +45,7 @@ const Home: FunctionComponent = () => {
 
   return (
     <Fragment>
+      
       <Head>
         <title>IT Staff Augmentation Services in Dammam and Riyadh | Fill Your Skill Gaps Fast</title>
         <meta title="title" content="IT Staff Augmentation Services Riyadh | Fill Your Skill Gaps Fast" />
@@ -65,6 +66,21 @@ const Home: FunctionComponent = () => {
         <link rel="preload" href="/benefits-webp-1000x684/DSS-Website-Elements_Visa.webp" as="image" type="image/webp" />
         <link rel="preload" href="/benefits-webp-1000x684/DSS-Website-Elements_Resource Deployment.webp" as="image" type="image/webp" />
         <link rel="preload" href="/background_vector.webp" as="image" type="image/webp" />
+        <Script src="https://www.googletagmanager.com/gtag/js?id=AW-16583886159" 
+          strategy="afterInteractive">
+        </Script>
+        <Script
+        id="google-analytics"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-16583886159');
+          `,
+        }}
+      />
       </Head>
       <EuiPage >
         <EuiPageBody>
