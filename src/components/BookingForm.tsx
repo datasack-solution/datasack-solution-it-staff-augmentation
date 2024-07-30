@@ -7,34 +7,36 @@ import styles from '../styles/BookingForm.module.css';
 import { CustomTech } from './CustomPricing';
 import { CuratedTechnologyData, technologies } from './Pricing';
 import SuccessModal from './SuccessModal';
-import emailJs, { EmailJSResponseStatus } from '@emailjs/browser';
+import emailJs from '@emailjs/browser';
+import PhoneInput, { CountryData } from 'react-phone-input-2';
+import 'react-phone-input-2/lib/style.css'
 
 
-export interface PredefinedTechReqData{
-    mainCategory: string;
-    subcategories: {
-        subcategory: string;
-        items: any;
-    }[];
+export interface PredefinedTechReqData {
+  mainCategory: string;
+  subcategories: {
+    subcategory: string;
+    items: any;
+  }[];
 }
 
 //this interface for writing on to the mail
-export interface CustomTechMailReqData{
+export interface CustomTechMailReqData {
   item: any;
 }
 
 //this interface for sending custom techniques to the db
 interface CustomTechApiReqData {
   techName: string;
-  quantity:number
+  quantity: number
 }
 
-export interface TechnologyReqData{
-  predefinedTechData:{ [key: string]: number },
-  customTechsData:CustomTechApiReqData[]
+export interface TechnologyReqData {
+  predefinedTechData: { [key: string]: number },
+  customTechsData: CustomTechApiReqData[]
 }
 
-const flattenTechnologyData = (curatedData: any, selectedData: any):PredefinedTechReqData[] => {
+const flattenTechnologyData = (curatedData: any, selectedData: any): PredefinedTechReqData[] => {
   const result = [];
 
   for (const mainCategory in curatedData) {
@@ -81,7 +83,7 @@ const BookingForm: FunctionComponent<BookingFormProps> = ({
   selectedRawTechData,
   customTechs
 }) => {
-  const { register, handleSubmit, formState: { errors } } = useForm<EnquiryForm>();
+  const { register, handleSubmit, formState: { errors }, watch, setValue,setError,clearErrors } = useForm<EnquiryForm>();
   const [expandedCategories, setExpandedCategories] = useState<string[]>([]);
   const [isSuccess, setSuccess] = useState(false)
   const [isFailed, setIsFailed] = useState(false)
@@ -100,7 +102,7 @@ const BookingForm: FunctionComponent<BookingFormProps> = ({
     const serviceId = "service_w3n2h6s";
     const templateIdWithGreet = "template_l6jxhcz";
     const templateIdWithTechnologies = "template_fzbseij";
-  
+
     const formDataEmail = {
       industry: data.industry,
       name: data.name,
@@ -110,7 +112,7 @@ const BookingForm: FunctionComponent<BookingFormProps> = ({
       requirements: data.requirements,
       nda: data.nda ? 'Yes' : 'No',
     };
-  
+
     const enquiryData: ClientRequestData = {
       industry: data.industry,
       name: data.name,
@@ -120,10 +122,10 @@ const BookingForm: FunctionComponent<BookingFormProps> = ({
       requirements: data.requirements,
       nda: data.nda
     };
-  
+
     try {
       let emailSent = false;
-  
+
       if (selectedRawTechData || (customTechs && customTechs.length > 0)) {
         const technologyArray: PredefinedTechReqData[] = flattenTechnologyData(technologies, selectedRawTechData);
         let customTechsData: CustomTechMailReqData[] = [];
@@ -131,7 +133,7 @@ const BookingForm: FunctionComponent<BookingFormProps> = ({
           techName: item.tech,
           quantity: parseInt(item.quantity)
         })) || [];
-  
+
         const enquiryDataWithTech: ClientRequestData = {
           ...enquiryData,
           skillsets: {
@@ -139,21 +141,21 @@ const BookingForm: FunctionComponent<BookingFormProps> = ({
             customTechsData: customTechApiReqData
           }
         };
-  
+
         if (!!customTechs) {
           customTechsData = customTechs.map(item => ({
             item: `${item.tech} (${item.quantity})`
           }));
         }
-  
+
         const templateParams = {
           ...formDataEmail,
           technologies: technologyArray,
           customTechnologies: customTechsData
         };
-  
+
         setIsLoading(true);
-        
+
         try {
           await emailJs.send(serviceId, templateIdWithTechnologies, templateParams, publicKey);
           emailSent = true;
@@ -163,7 +165,7 @@ const BookingForm: FunctionComponent<BookingFormProps> = ({
           setIsFailed(true);
           return;
         }
-  
+
         if (emailSent) {
           try {
             await clientApiService.createClient(enquiryDataWithTech);
@@ -174,7 +176,7 @@ const BookingForm: FunctionComponent<BookingFormProps> = ({
         }
       } else {
         setIsLoading(true);
-  
+
         try {
           await emailJs.send(serviceId, templateIdWithGreet, formDataEmail, publicKey);
           emailSent = true;
@@ -184,7 +186,7 @@ const BookingForm: FunctionComponent<BookingFormProps> = ({
           setIsFailed(true);
           return;
         }
-  
+
         if (emailSent) {
           try {
             await clientApiService.createClient(enquiryData);
@@ -194,7 +196,7 @@ const BookingForm: FunctionComponent<BookingFormProps> = ({
           }
         }
       }
-  
+
       setIsLoading(false);
     } catch (e: any) {
       console.log("Unexpected error: ", e);
@@ -202,7 +204,7 @@ const BookingForm: FunctionComponent<BookingFormProps> = ({
       setIsFailed(true);
     }
   };
-  
+
 
   const closeModal = () => {
     setSuccess(false);
@@ -215,6 +217,8 @@ const BookingForm: FunctionComponent<BookingFormProps> = ({
     { brandUrl: "/alinma.png", alt: "alinma" },
     { brandUrl: "/bank_albilad.png", alt: "bank_albilad" },
   ]
+
+  const phone = watch('phone')
 
   return (
 
@@ -297,7 +301,7 @@ const BookingForm: FunctionComponent<BookingFormProps> = ({
                   <option value="finance">Finance</option>
                   <option value="healthcare">Healthcare</option>
                 </select>
-                {errors.industry && <label className={styles.error}>{errors.industry.message}</label>}
+                {errors.industry && <label className={styles.error}  style={{fontSize:'15px'}}>{errors.industry.message}</label>}
               </div>
 
               <div className={styles.formGroup}>
@@ -307,7 +311,7 @@ const BookingForm: FunctionComponent<BookingFormProps> = ({
                   id="name"
                   {...register('name', { required: 'Name is required' })}
                 />
-                {errors.name && <label className={styles.error}>{errors.name.message}</label>}
+                {errors.name && <label className={styles.error}  style={{fontSize:'15px'}}>{errors.name.message}</label>}
               </div>
 
               <div className={styles.formGroup}>
@@ -317,27 +321,40 @@ const BookingForm: FunctionComponent<BookingFormProps> = ({
                   id="email"
                   {...register('email', { required: 'Email is required', pattern: { value: /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/, message: 'Invalid email address' } })}
                 />
-                {errors.email && <label className={styles.error}>{errors.email.message}</label>}
+                {errors.email && <label className={styles.error}  style={{fontSize:'15px'}}>{errors.email.message}</label>}
               </div>
 
               <div className={styles.formGroup}>
                 <label htmlFor="phone">Phone</label>
-                <input
-                  type="tel"
-                  id="phone"
-                  {...register('phone', { required: 'Phone is required' })}
+                <PhoneInput
+                  country={'in'}
+                  value={phone}
+                  onChange={(phone,data:CountryData) => {
+                    const countryCodeLength = data.dialCode.length
+                    if (phone=='' || phone.length==countryCodeLength){
+                      setError('phone',{
+                        message:'Phone Number required'
+                      })
+                    }else{
+                      clearErrors('phone')
+                    }
+                    setValue('phone', phone)
+                  }}
+                  inputStyle={{
+                    width:'100%'
+                  }}
                 />
-                {errors.phone && <label className={styles.error}>{errors.phone.message}</label>}
+                {errors.phone && <label className={styles.error} style={{fontSize:'15px'}}>{errors.phone.message}</label>}
               </div>
 
               <div className={styles.formGroup}>
-                <label htmlFor="date">Date & time</label>
+                <label htmlFor="date">Schedule Date & time</label>
                 <input
                   type="datetime-local"
                   id="date"
                   {...register('date', { required: 'Date and time are required' })}
                 />
-                {errors.date && <label className={styles.error}>{errors.date.message}</label>}
+                {errors.date && <label className={styles.error}  style={{fontSize:'15px'}}>{errors.date.message}</label>}
               </div>
 
               <div className={styles.formGroup}>
@@ -346,7 +363,7 @@ const BookingForm: FunctionComponent<BookingFormProps> = ({
                   id="requirements"
                   {...register('requirements', { required: 'Project requirements are required' })}
                 ></textarea>
-                {errors.requirements && <label className={styles.error}>{errors.requirements.message}</label>}
+                {errors.requirements && <label className={styles.error}  style={{fontSize:'15px'}}>{errors.requirements.message}</label>}
               </div>
 
               <div className={`${styles.formGroup} ${styles.formgroup_protect}`}>
