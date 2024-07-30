@@ -1,14 +1,40 @@
-import { EuiButtonIcon, EuiFlexGroup, EuiFlexItem, EuiHorizontalRule, EuiIcon, EuiImage, EuiPanel, EuiSkeletonCircle, EuiSkeletonLoading, EuiSkeletonRectangle, EuiSkeletonText, EuiSkeletonTitle, EuiSpacer, EuiText } from '@elastic/eui';
-import emailJs, { EmailJSResponseStatus } from '@emailjs/browser';
+import { clientApiService, ClientRequestData } from '@/api/userApi';
+import { EuiButtonIcon, EuiFlexGroup, EuiFlexItem, EuiHorizontalRule, EuiIcon, EuiPanel, EuiSkeletonCircle, EuiSkeletonLoading, EuiSkeletonRectangle, EuiSkeletonText, EuiSkeletonTitle, EuiSpacer, EuiText } from '@elastic/eui';
+import Image from 'next/image';
 import { Fragment, FunctionComponent, useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import styles from '../styles/BookingForm.module.css';
+import { CustomTech } from './CustomPricing';
 import { CuratedTechnologyData, technologies } from './Pricing';
 import SuccessModal from './SuccessModal';
-import Image from 'next/image';
-import { CustomTech } from './CustomPricing';
+import emailJs, { EmailJSResponseStatus } from '@emailjs/browser';
 
-const flattenTechnologyData = (curatedData: any, selectedData: any) => {
+
+export interface PredefinedTechReqData{
+    mainCategory: string;
+    subcategories: {
+        subcategory: string;
+        items: any;
+    }[];
+}
+
+//this interface for writing on to the mail
+export interface CustomTechMailReqData{
+  item: any;
+}
+
+//this interface for sending custom techniques to the db
+interface CustomTechApiReqData {
+  techName: string;
+  quantity:number
+}
+
+export interface TechnologyReqData{
+  predefinedTechData:{ [key: string]: number },
+  customTechsData:CustomTechApiReqData[]
+}
+
+const flattenTechnologyData = (curatedData: any, selectedData: any):PredefinedTechReqData[] => {
   const result = [];
 
   for (const mainCategory in curatedData) {
@@ -34,7 +60,7 @@ const flattenTechnologyData = (curatedData: any, selectedData: any) => {
   }
   return result;
 };
-interface EnquiryForm {
+export interface EnquiryForm {
   industry: string;
   name: string;
   email: string;
@@ -46,7 +72,7 @@ interface EnquiryForm {
 
 export interface BookingFormProps {
   selectedTechnologies?: CuratedTechnologyData;
-  selectedRawTechData?: { [key: string]: number }
+  selectedRawTechData: { [key: string]: number }
   customTechs?: CustomTech[]
 }
 
@@ -70,12 +96,12 @@ const BookingForm: FunctionComponent<BookingFormProps> = ({
   };
 
   const onSubmit: SubmitHandler<EnquiryForm> = async (data: EnquiryForm) => {
-    const publicKey = "28Jy3xAgZVdVfJM4A"
-    const serviceId = "service_w3n2h6s"
-    const templateIdWithGreet = "template_l6jxhcz"
-    const templateIdWithTechnologies = "template_fzbseij"
-
-    const formData = {
+    const publicKey = "28Jy3xAgZVdVfJM4A";
+    const serviceId = "service_w3n2h6s";
+    const templateIdWithGreet = "template_l6jxhcz";
+    const templateIdWithTechnologies = "template_fzbseij";
+  
+    const formDataEmail = {
       industry: data.industry,
       name: data.name,
       email: data.email,
@@ -84,50 +110,99 @@ const BookingForm: FunctionComponent<BookingFormProps> = ({
       requirements: data.requirements,
       nda: data.nda ? 'Yes' : 'No',
     };
-
+  
+    const enquiryData: ClientRequestData = {
+      industry: data.industry,
+      name: data.name,
+      email: data.email,
+      phone: data.phone,
+      date: data.date,
+      requirements: data.requirements,
+      nda: data.nda
+    };
+  
     try {
-      if (selectedRawTechData || (customTechs && customTechs.length >0)) {
-        setIsLoading(true)
-        const technologyArray = flattenTechnologyData(technologies, selectedRawTechData)
-        let customTechsData:{
-          item: string;
-      }[]=[]
-
-        if (!!customTechs){
-          customTechsData=customTechs.map(item=>{
-          return {
-            item: `${item.tech} (${item.quantity})`
+      let emailSent = false;
+  
+      if (selectedRawTechData || (customTechs && customTechs.length > 0)) {
+        const technologyArray: PredefinedTechReqData[] = flattenTechnologyData(technologies, selectedRawTechData);
+        let customTechsData: CustomTechMailReqData[] = [];
+        const customTechApiReqData: CustomTechApiReqData[] = customTechs?.map(item => ({
+          techName: item.tech,
+          quantity: parseInt(item.quantity)
+        })) || [];
+  
+        const enquiryDataWithTech: ClientRequestData = {
+          ...enquiryData,
+          skillsets: {
+            predefinedTechData: selectedRawTechData,
+            customTechsData: customTechApiReqData
           }
-        })
+        };
+  
+        if (!!customTechs) {
+          customTechsData = customTechs.map(item => ({
+            item: `${item.tech} (${item.quantity})`
+          }));
         }
-       
+  
         const templateParams = {
-          ...formData,
+          ...formDataEmail,
           technologies: technologyArray,
           customTechnologies: customTechsData
         };
-        await emailJs.send(serviceId, templateIdWithTechnologies, templateParams, {
-          publicKey
-        })
-        setIsLoading(false)
-        setSuccess(true)
+  
+        setIsLoading(true);
+        
+        try {
+          await emailJs.send(serviceId, templateIdWithTechnologies, templateParams, publicKey);
+          emailSent = true;
+        } catch (emailError) {
+          console.error("Error sending email:", emailError);
+          setIsLoading(false);
+          setIsFailed(true);
+          return;
+        }
+  
+        if (emailSent) {
+          try {
+            await clientApiService.createClient(enquiryDataWithTech);
+            setSuccess(true);
+          } catch (apiError) {
+            console.error("Error creating client:", apiError);
+          }
+        }
+      } else {
+        setIsLoading(true);
+  
+        try {
+          await emailJs.send(serviceId, templateIdWithGreet, formDataEmail, publicKey);
+          emailSent = true;
+        } catch (emailError) {
+          console.error("Error sending email:", emailError);
+          setIsLoading(false);
+          setIsFailed(true);
+          return;
+        }
+  
+        if (emailSent) {
+          try {
+            await clientApiService.createClient(enquiryData);
+            setSuccess(true);
+          } catch (apiError) {
+            console.error("Error creating client:", apiError);
+          }
+        }
       }
-      else {
-        setIsLoading(true)
-        await emailJs.send(serviceId, templateIdWithGreet, formData, {
-          publicKey
-        })
-        setIsLoading(false)
-        setSuccess(true)
-      }
+  
+      setIsLoading(false);
     } catch (e: any) {
-      setIsLoading(false)
-      if (e instanceof EmailJSResponseStatus)
-        setSuccess(false)
-      setIsFailed(true)
-      console.log("error on sending mail", e.text, e.status)
+      console.log("Unexpected error: ", e);
+      setIsLoading(false);
+      setIsFailed(true);
     }
   };
+  
 
   const closeModal = () => {
     setSuccess(false);
@@ -284,7 +359,7 @@ const BookingForm: FunctionComponent<BookingFormProps> = ({
                   <label htmlFor="nda" style={{ marginLeft: '10px' }}>I want to protect my data by signing an NDA.</label>
                   <span className='tooltip' style={{ marginBottom: '5px', marginLeft: '5px' }} title="A Non-Disclosure Agreement (NDA) is a confidentiality agreement.">&#x1F6C8;</span>
                 </div>
-                <style jsx>{`
+                <style>{`
         @media (max-width: 720px) {
           .tooltip {
             display: none;
@@ -327,19 +402,19 @@ const BookingForm: FunctionComponent<BookingFormProps> = ({
                     )}
                   </div>
                 ))}
-                {customTechs !=undefined && customTechs.length>0 && <Fragment>
-                  <div  className={styles.categoryWrapper}>
-                  <div onClick={() => toggleCategory('CustomTech')} className={styles.mainCategory}>
+                {customTechs != undefined && customTechs.length > 0 && <Fragment>
+                  <div className={styles.categoryWrapper}>
+                    <div onClick={() => toggleCategory('CustomTech')} className={styles.mainCategory}>
                       <h2>Custom Techs</h2>
                       <EuiButtonIcon
                         aria-label={`Toggle CustomTech`}
                         iconType={expandedCategories.includes('CustomTech') ? 'arrowDown' : 'arrowRight'}
                       />
                     </div>
-                    {customTechs.map((tech,idx)=> <>
-                    {expandedCategories.includes('CustomTech') && <div key={idx} className={styles.subCategory}>
-                      <EuiText size='xs'>{tech.tech}: {tech.quantity}</EuiText>
-                    </div>}
+                    {customTechs.map((tech, idx) => <>
+                      {expandedCategories.includes('CustomTech') && <div key={idx} className={styles.subCategory}>
+                        <EuiText size='xs'>{tech.tech}: {tech.quantity}</EuiText>
+                      </div>}
                     </>
                     )}
                   </div>
@@ -364,10 +439,6 @@ const BookingForm: FunctionComponent<BookingFormProps> = ({
         </div>
       }
     />
-
-
-
-
   );
 };
 

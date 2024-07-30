@@ -28,33 +28,33 @@ type Technologies = {
 
 export const technologies: Technologies = {
     'Development Technologies': {
-        Web: ['HTML5', 'CSS3', 'JavaScript', 'AngularJS'],
-        Mobile: ['Android', 'iOS', 'Xamarin'],
+        "Web": ['HTML5', 'CSS3', 'JavaScript', 'AngularJS'],
+        "Mobile": ['Android', 'iOS', 'Xamarin'],
         '.NET': ['C#', 'ASP.NET', 'Entity Framework'],
-        J2EE: ['Java', 'Spring', 'Hibernate'],
-        LAMP: ['Linux', 'Apache', 'MySQL', 'PHP'],
+        "J2EE": ['Java', 'Spring', 'Hibernate'],
+        "LAMP": ['Linux', 'Apache', 'MySQL', 'PHP'],
     },
     'Data Management and Analytics': {
-        Database: ['Microsoft SQL Server', 'Oracle', 'SQLite', 'PL/SQL'],
+        "Database": ['Microsoft SQL Server', 'Oracle', 'SQLite', 'PL/SQL'],
         'Big Data': ['Hadoop', 'MongoDB'],
-        Analytics: ['Power BI', 'SSRS', 'Google Analytics'],
+        "Analytics": ['Power BI', 'SSRS', 'Google Analytics'],
     },
     'Platforms and Systems': {
-        ERP: ['Microsoft Navison', 'SAP'],
-        CRM: ['Microsoft Dynamics CRM'],
-        CMS: ['Dot Net DNN', 'WordPress', 'Alfresco', 'Drupal', 'Joomla'],
+        "ERP": ['Microsoft Navison', 'SAP'],
+        "CRM": ['Microsoft Dynamics CRM'],
+        "CMS": ['Dot Net DNN', 'WordPress', 'Alfresco', 'Drupal', 'Joomla'],
         'Cloud Platforms': ['Azure', 'Amazon', 'AWS'],
     },
     'Architecture and Design': {
-        Architecture: ['Enterprise Architect', 'Rational Software Architect', 'No Magic', 'Modelio', 'Archi'],
-        UIDesigning: ['Infragistics', 'Telerik'],
+        "Architecture": ['Enterprise Architect', 'Rational Software Architect', 'No Magic', 'Modelio', 'Archi'],
+        "UIDesigning": ['Infragistics', 'Telerik'],
     },
     'Business Solutions': {
-        eCommerce: ['Magento', 'VevoCart', 'Shopify'],
+        "eCommerce": ['Magento', 'VevoCart', 'Shopify'],
         'Enterprise Social': ['Microsoft Yammer'],
     },
     'Quality Assurance and Project Management': {
-        Testing: ['JMeter', 'JUnit', 'Mercury', 'Selenium', 'Regression Testing'],
+        "Testing": ['JMeter', 'JUnit', 'Mercury', 'Selenium', 'Regression Testing'],
         'Project Management': ['MS Project', 'SmartSheet'],
     },
 };

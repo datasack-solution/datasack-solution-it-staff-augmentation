@@ -6,10 +6,9 @@ import Footer from "@/components/Footer";
 import HeaderComponent from "@/components/Header";
 import ManagedServices from "@/components/ManagedServices";
 import PricingPage from "@/components/Pricing";
-import { EuiButton, EuiCard, EuiFlexGroup, EuiFlexItem, EuiGlobalToastList, EuiImage, EuiPage, EuiPageBody, EuiSpacer } from "@elastic/eui";
+import { EuiButton, EuiCard, EuiFlexGroup, EuiFlexItem, EuiGlobalToastList, EuiPage, EuiPageBody, EuiSpacer } from "@elastic/eui";
 import Head from "next/head";
 import { Fragment, FunctionComponent, useEffect, useState } from "react";
-import Script from 'next/script'
 
 const Home: FunctionComponent = () => {
   const [toasts, setToasts] = useState<Array<{ id: string, title: string, text: React.ReactNode }>>([]);
@@ -45,21 +44,6 @@ const Home: FunctionComponent = () => {
 
   return (
     <Fragment>
-      <Script id="google-analytics-tag" src="https://www.googletagmanager.com/gtag/js?id=AW-16583886159"
-        strategy="afterInteractive">
-      </Script>
-      <Script
-        id="google-analytics"
-        strategy="afterInteractive"
-        dangerouslySetInnerHTML={{
-          __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'AW-16583886159');
-          `,
-        }}
-      />
       <Head>
         <title>IT Staff Augmentation Services in Dammam and Riyadh | Fill Your Skill Gaps Fast</title>
         <meta title="title" content="IT Staff Augmentation Services Riyadh | Fill Your Skill Gaps Fast" />

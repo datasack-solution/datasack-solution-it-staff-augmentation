@@ -1,20 +1,17 @@
 import {
+  EuiButtonIcon,
   EuiFlexGroup,
   EuiFlexItem,
-  EuiHeader,
-  EuiImage,
-  EuiButtonIcon,
   EuiFlyout,
   EuiFlyoutBody,
   EuiFlyoutHeader,
-  EuiTitle,
-  EuiText,
-  useEuiMaxBreakpoint,
+  EuiHeader,
+  EuiText
 } from '@elastic/eui';
 import styled from '@emotion/styled';
+import Image from 'next/image';
 import { Fragment, FunctionComponent, useState } from 'react';
 import EnquiryModal from './EnquiryModal';
-import Image from 'next/image';
 
 const HeaderComponent: FunctionComponent = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -75,16 +72,16 @@ const HeaderComponent: FunctionComponent = () => {
                   </EuiFlyoutHeader>
                   <EuiFlyoutBody>
                     <EuiText>
-                      <p><HeaderLink onClick={() => {
+                      <HeaderLink onClick={() => {
                         document.getElementById('window-pricing')?.scrollIntoView({ behavior: 'smooth' })
-                      }}>Get <span style={{color:'orange',fontWeight:'bold'}}>Pricing</span></HeaderLink></p>
-                      <p><HeaderLink onClick={() => {
+                      }}>Get <span style={{color:'orange',fontWeight:'bold'}}>Pricing</span></HeaderLink>
+                     <HeaderLink onClick={() => {
                         document.getElementById('managed-service-section')?.scrollIntoView({ behavior: 'smooth' })
-                      }}>Managed Services</HeaderLink></p>
-                      <p><HeaderLink onClick={() => {
+                      }}>Managed Services</HeaderLink>
+                     <HeaderLink onClick={() => {
                         setIsModalOpen(true)
                         setIsFlyoutVisible(false)
-                      }}>Call Us</HeaderLink></p>
+                      }}>Call Us</HeaderLink>
                     </EuiText>
                   </EuiFlyoutBody>
                 </EuiFlyout>}
@@ -113,7 +110,7 @@ const HeaderComponent: FunctionComponent = () => {
         </HeaderContainer>
       </EuiHeader>
 
-      <EnquiryModal isOpen={isModalOpen} closeModal={(isClosed) => { setIsModalOpen(!isClosed) }} customTechs={[]} />
+      <EnquiryModal isOpen={isModalOpen} closeModal={(isClosed) => { setIsModalOpen(!isClosed) }} customTechs={[]}  selectedRawTechData={{}}/>
     </Fragment>
   );
 };

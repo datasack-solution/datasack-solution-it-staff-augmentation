@@ -13,7 +13,7 @@ const SuccessModal: React.FC<ModalProps> = ({ onClose,isSuccess }) => {
   };
 
   return (
-    <EuiModal onClose={closeModal} initialFocus="[name=popswitch]">
+    <EuiModal popover='manual' onClose={closeModal} initialFocus="[name=popswitch]">
       <EuiModalHeader>
         <EuiFlexGroup >
         {isSuccess && <EuiText >Thank you for contacting us!</EuiText>}

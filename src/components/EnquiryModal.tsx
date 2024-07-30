@@ -13,7 +13,7 @@ export interface EnquiryModalProps {
   isOpen: boolean
   closeModal: (isClose: boolean) => void
   selectedTechnologies?: CuratedTechnologyData
-  selectedRawTechData?: { [key: string]: number }
+  selectedRawTechData: { [key: string]: number }
   customTechs: CustomTech[]
 }
 
