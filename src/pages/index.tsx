@@ -46,6 +46,7 @@ const Home: FunctionComponent = () => {
     <Fragment>
       <Head>
         <title>IT Staff Augmentation Services in Dammam and Riyadh | Fill Your Skill Gaps Fast</title>
+        <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1"/>
         <meta title="title" content="IT Staff Augmentation Services Riyadh | Fill Your Skill Gaps Fast" />
         <meta name="description" content="Get the right talent at the right price. Find DataSack's IT Staff Augmentation Services in Dammam and Riyadh. Resolve skill shortages for project excellence." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />

@@ -12,6 +12,7 @@ import styled from '@emotion/styled';
 import Image from 'next/image';
 import { Fragment, FunctionComponent, useState } from 'react';
 import EnquiryModal from './EnquiryModal';
+import Link from 'next/link';
 
 const HeaderComponent: FunctionComponent = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -54,7 +55,9 @@ const HeaderComponent: FunctionComponent = () => {
       <EuiHeader style={{ background: ' rgba(0, 0, 0, 0.705)', border: 'none', height: '60px' }} position="fixed">
         <HeaderContainer>
           <EuiFlexItem grow={false} className="logo-item">
+            <Link href={"https://www.datasack.in"}>
             <Image width={150} height={150}  className='logo-item' src='/logo.png' alt='logo' />
+            </Link>
           </EuiFlexItem>
           <EuiFlexItem grow={false} className="nav-items">
             <EuiFlexGroup id='menu-icon' >

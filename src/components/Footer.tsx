@@ -8,6 +8,7 @@ import {
 import '@elastic/eui/dist/eui_theme_light.css';
 import styles from '../styles/Footer.module.css'
 import Image from 'next/image';
+import Link from 'next/link';
 
 const Footer = () => {
     return (
@@ -15,7 +16,9 @@ const Footer = () => {
             <EuiFlexGroup id='footer-section' responsive wrap alignItems="center" justifyContent="spaceBetween">
                 <EuiFlexItem grow={false} >
                     <div className={styles.footer_logo_item}>
+                    <Link href={"https://www.datasack.in"}>
                         <Image width={150} height={150} src="/logo.png" alt="Company Logo" className={styles.footer_logo} />
+                    </Link>
                     </div>
                 </EuiFlexItem>
 
@@ -45,7 +48,9 @@ const Footer = () => {
                             <EuiText >
                                 <p onClick={() => {
                                     document.getElementById('services_section')?.scrollIntoView({ behavior: 'smooth' })
-                                }} className={styles.footer_link}>Ph: +966 56 085 8596</p>
+                                }} className={styles.footer_link}>
+                                <a style={{color:'#6B6A6A'}} href='tel:+966560858596'>Ph: +966-560858596</a>
+                                </p>
                             </EuiText>
                         </EuiFlexItem>
 
@@ -68,7 +73,7 @@ const Footer = () => {
                             <EuiText >
                                 <p onClick={() => {
                                     document.getElementById('services_section')?.scrollIntoView({ behavior: 'smooth' })
-                                }} className={styles.footer_link}>Ph: +91 88388 85683</p>
+                                }} className={styles.footer_link}><a style={{color:'#6B6A6A'}} href='tel:+918838885683'>Ph: +91 88388 85683</a></p>
                             </EuiText>
                         </EuiFlexItem>
 
