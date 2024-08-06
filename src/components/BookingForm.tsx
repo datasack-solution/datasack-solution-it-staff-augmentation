@@ -219,6 +219,7 @@ const BookingForm: FunctionComponent<BookingFormProps> = ({
   ]
 
   const phone = watch('phone')
+  const email = watch('email')
 
   return (
 
@@ -319,6 +320,7 @@ const BookingForm: FunctionComponent<BookingFormProps> = ({
                 <input
                   type="email"
                   id="email"
+                  value={email?.toLowerCase()}
                   {...register('email', { required: 'Email is required', pattern: { value: /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/, message: 'Invalid email address' } })}
                 />
                 {errors.email && <label className={styles.error}  style={{fontSize:'15px'}}>{errors.email.message}</label>}
