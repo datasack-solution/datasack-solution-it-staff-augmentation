@@ -49,7 +49,7 @@ const settings: Settings = {
   dots: true,
   arrows: true,
   infinite: true,
-  speed: 400,
+  speed: 200,
   slidesToShow: 1,
   slidesToScroll: 1,
   autoplay: true,

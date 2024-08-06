@@ -94,6 +94,7 @@ const CustomTechInput: FunctionComponent<CustomeTechInputProps> = ({
         <div style={{ paddingBottom: '50px' }}>
             <div className={styles.pricing_mobile_view}>
                 <p style={{ color: '#B06607', fontSize: '20px' }}>Do you want to add custom tech&apos;s?</p>
+                <EuiSpacer size='m'/>
             </div>
             <div className={styles.pricing_web_view}>
                 <EuiTitle>
