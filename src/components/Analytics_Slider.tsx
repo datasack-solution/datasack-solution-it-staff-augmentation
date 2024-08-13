@@ -1,9 +1,7 @@
 "use client";
 import {
   EuiCard,
-  EuiFlexItem,
-  EuiPage,
-  EuiPageBody
+  EuiFlexItem
 } from '@elastic/eui';
 import '@elastic/eui/dist/eui_theme_light.css';
 import Slider, { Settings } from 'react-slick';
