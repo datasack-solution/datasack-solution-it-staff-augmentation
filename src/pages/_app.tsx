@@ -30,7 +30,7 @@ export default function App({ Component, pageProps }: AppProps) {
         key="ga-analytics"
       /> */}
     <Component {...pageProps} />
-    <GoogleTagManager gtmId={'AW-16583886159'}/>
+    {/* <GoogleTagManager gtmId={'AW-16583886159'}/> */}
     {/* <GoogleTagManager gtmId={'GTM-PJGGKTVQ'}/> */}
   </EuiProvider>;
 }
