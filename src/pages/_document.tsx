@@ -5,7 +5,7 @@ export default function Document() {
     <Html lang="en">
       <Head>
         {/* when using next/script, it is not reflected in header section. */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-RD5F5DH96G"></script>
+        {/* <script async src="https://www.googletagmanager.com/gtag/js?id=G-RD5F5DH96G"></script>
         <script dangerouslySetInnerHTML={{
           __html: `window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
@@ -21,7 +21,9 @@ export default function Document() {
                   j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
                   })(window,document,'script','dataLayer','GTM-PJGGKTVQ');`
-        }}></script>
+        }}></script> */}
+
+
       </Head>
       <body>
         <Main />
@@ -31,11 +33,11 @@ export default function Document() {
             __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=AW-16583886159" height="0" width="0" style="display: none; visibility: hidden;" />`,
           }}
         />
-        <noscript
+        {/* <noscript
           dangerouslySetInnerHTML={{
             __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PJGGKTVQ" height="0" width="0" style="display:none;visibility:hidden"></iframe>`
           }}
-        ></noscript>
+        ></noscript> */}
       </body>
     </Html>
   );
