@@ -12,7 +12,7 @@ const FabButtonCallus:FunctionComponent = () =>{
   >
     <EnquiryModal isOpen={isModalOpen} closeModal={(isClosed) => { setIsModalOpen(!isClosed) }} customTechs={[]}  selectedRawTechData={{}}/>
 
-    <Image width={200} height={200} src='/callus-bubbles.png' alt="home" onClick={()=>setIsModalOpen(true)}
+    <Image width={200} height={200} src='/callus-plain.png' alt="callus" onClick={()=>setIsModalOpen(true)}
     /> 
   </div>
 }

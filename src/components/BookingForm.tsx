@@ -329,7 +329,7 @@ const BookingForm: FunctionComponent<BookingFormProps> = ({
               <div className={styles.formGroup}>
                 <label htmlFor="phone">Phone</label>
                 <PhoneInput
-                  country={'in'}
+                  country={'sa'}
                   value={phone}
                   onChange={(phone,data:CountryData) => {
                     const countryCodeLength = data.dialCode.length

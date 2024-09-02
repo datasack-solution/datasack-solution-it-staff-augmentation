@@ -31,6 +31,7 @@ const CustomTechInput: FunctionComponent<CustomeTechInputProps> = ({
         newCustomTechs[index].tech = value;
         newCustomTechs[index].hasError = false;
         setCustomTechs(newCustomTechs);
+        saveChanges(index)
     };
 
     const handleQuantityChange = (index: number, value: string) => {
@@ -38,17 +39,18 @@ const CustomTechInput: FunctionComponent<CustomeTechInputProps> = ({
         newCustomTechs[index].quantity = value;
         newCustomTechs[index].hasError = false;
         setCustomTechs(newCustomTechs);
+        saveChanges(index)
     };
 
-    const toggleEdit = (index: number) => {
-        const newCustomTechs = [...customTechs];
-        newCustomTechs[index].isEditing = !newCustomTechs[index].isEditing;
-        if (newCustomTechs[index].isEditing) {
-            newCustomTechs[index].originalTech = newCustomTechs[index].tech;
-            newCustomTechs[index].originalQuantity = newCustomTechs[index].quantity;
-        }
-        setCustomTechs(newCustomTechs);
-    };
+    // const toggleEdit = (index: number) => {
+    //     const newCustomTechs = [...customTechs];
+    //     newCustomTechs[index].isEditing = !newCustomTechs[index].isEditing;
+    //     if (newCustomTechs[index].isEditing) {
+    //         newCustomTechs[index].originalTech = newCustomTechs[index].tech;
+    //         newCustomTechs[index].originalQuantity = newCustomTechs[index].quantity;
+    //     }
+    //     setCustomTechs(newCustomTechs);
+    // };
 
     const toggleDelete = (index: number) => {
         const newCustomTechs = customTechs.filter((_, idx) => idx !== index);
@@ -58,37 +60,38 @@ const CustomTechInput: FunctionComponent<CustomeTechInputProps> = ({
 
     const saveChanges = (index: number) => {
         const newCustomTechs = [...customTechs];
-        if (newCustomTechs[index].tech.trim() === '') {
-            newCustomTechs[index].hasError = true;
-        } else if (newCustomTechs[index].quantity == '') {
-            newCustomTechs[index].hasError = true
-        } else {
-            newCustomTechs[index].isEditing = false;
-            newCustomTechs[index].hasError = false;
-        }
-        setCustomTechs(newCustomTechs);
-        if (newCustomTechs[index].hasError == false) {
-            const filteredTechData = customTechs.filter(tech => tech.tech !== '' && tech.quantity != '')
-            onSelect(filteredTechData)
-        }
+            if (newCustomTechs[index].tech.trim() === '') {
+                newCustomTechs[index].hasError = true;
+            } else if (newCustomTechs[index].quantity == '') {
+                newCustomTechs[index].hasError = true
+            } else {
+                newCustomTechs[index].isEditing = false;
+                newCustomTechs[index].hasError = false;
+            }
+            setCustomTechs(newCustomTechs);
+            if (newCustomTechs[index].hasError == false) {
+                const filteredTechData = customTechs.filter(tech => tech.tech !== '' && tech.quantity != '')
+                onSelect(filteredTechData)
+            }
+
     };
 
     const addCustomTech = () => {
         setCustomTechs([...customTechs, { tech: '', quantity: '', isEditing: true, originalTech: '', originalQuantity: '', hasError: false }]);
     };
 
-    const cancelEdit = (index: number) => {
-        const newCustomTechs = [...customTechs];
-        if (newCustomTechs[index].originalTech === '' && newCustomTechs[index].originalQuantity === '') {
-            newCustomTechs.splice(index, 1);
-        } else {
-            newCustomTechs[index].tech = newCustomTechs[index].originalTech;
-            newCustomTechs[index].quantity = newCustomTechs[index].originalQuantity;
-            newCustomTechs[index].isEditing = false;
-            newCustomTechs[index].hasError = false;
-        }
-        setCustomTechs(newCustomTechs);
-    };
+    // const cancelEdit = (index: number) => {
+    //     const newCustomTechs = [...customTechs];
+    //     if (newCustomTechs[index].originalTech === '' && newCustomTechs[index].originalQuantity === '') {
+    //         newCustomTechs.splice(index, 1);
+    //     } else {
+    //         newCustomTechs[index].tech = newCustomTechs[index].originalTech;
+    //         newCustomTechs[index].quantity = newCustomTechs[index].originalQuantity;
+    //         newCustomTechs[index].isEditing = false;
+    //         newCustomTechs[index].hasError = false;
+    //     }
+    //     setCustomTechs(newCustomTechs);
+    // };
 
     return (
         <div style={{ paddingBottom: '50px' }}>
@@ -124,7 +127,7 @@ const CustomTechInput: FunctionComponent<CustomeTechInputProps> = ({
                                         value={customTech.tech}
                                         onChange={(e) => handleTechChange(index, e.target.value)}
                                         aria-label="Enter custom tech"
-                                        disabled
+                                        disabled={false}
                                     />
                                 )}
                             </EuiFlexItem>
@@ -145,7 +148,7 @@ const CustomTechInput: FunctionComponent<CustomeTechInputProps> = ({
                                         onChange={(e) => handleQuantityChange(index, e.target.value)}
                                         aria-label="Enter quantity"
                                         type="number"
-                                        disabled
+                                        disabled={false}
                                     />
                                 )}
                             </EuiFlexItem>
@@ -153,7 +156,7 @@ const CustomTechInput: FunctionComponent<CustomeTechInputProps> = ({
                             <EuiFlexItem grow={false} style={{ padding: '0 5px' }}>
                                 {customTech.isEditing ? (
                                     <EuiFlexGroup gutterSize="s" responsive={false}>
-                                        <EuiFlexItem grow={false}>
+                                        {/* <EuiFlexItem grow={false}>
                                             <EuiButtonIcon
                                                 color='success'
                                                 display='fill'
@@ -161,8 +164,8 @@ const CustomTechInput: FunctionComponent<CustomeTechInputProps> = ({
                                                 onClick={() => saveChanges(index)}
                                                 aria-label="Save"
                                             />
-                                        </EuiFlexItem>
-                                        <EuiFlexItem grow={false}>
+                                        </EuiFlexItem> */}
+                                        {/* <EuiFlexItem grow={false}>
                                             <EuiButtonIcon
                                                 color='accent'
                                                 display='fill'
@@ -170,16 +173,16 @@ const CustomTechInput: FunctionComponent<CustomeTechInputProps> = ({
                                                 onClick={() => cancelEdit(index)}
                                                 aria-label="Cancel"
                                             />
-                                        </EuiFlexItem>
+                                        </EuiFlexItem> */}
                                     </EuiFlexGroup>
                                 ) : (
                                     <EuiFlexGroup responsive={false}>
-                                        <EuiButtonIcon
+                                        {/* <EuiButtonIcon
                                             color='success'
                                             iconType="pencil"
                                             onClick={() => toggleEdit(index)}
                                             aria-label="Edit"
-                                        />
+                                        /> */}
                                         <EuiButtonIcon
                                             color='danger'
                                             iconType="trash"
@@ -189,6 +192,8 @@ const CustomTechInput: FunctionComponent<CustomeTechInputProps> = ({
                                     </EuiFlexGroup>
                                 )}
                             </EuiFlexItem>
+
+                            
                         </EuiFlexGroup>
                     </Fragment>
                 ))}
