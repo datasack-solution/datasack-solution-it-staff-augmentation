@@ -1,7 +1,9 @@
 import AnalyticsSlider from "@/components/Analytics_Slider";
 import Benefits from "@/components/Benefits";
 import BenefitsSlider from "@/components/Benefits_Slider";
-import FabButton from "@/components/FabButton";
+import FabButtonCallus from "@/components/FabButtonCallus";
+import FabButtonHome from "@/components/FabButtonHome";
+import FabButton from "@/components/FabButtonWhatsapp";
 import Footer from "@/components/Footer";
 import HeaderComponent from "@/components/Header";
 import ManagedServices from "@/components/ManagedServices";
@@ -71,6 +73,12 @@ const Home: FunctionComponent = () => {
           <HeaderComponent />
           <div>
             <FabButton />
+          </div>
+          <div>
+            <FabButtonHome/>
+          </div>
+          <div>
+          <FabButtonCallus/>
           </div>
 
           <div>
