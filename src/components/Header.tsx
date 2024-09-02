@@ -6,6 +6,7 @@ import {
   EuiFlyoutBody,
   EuiFlyoutHeader,
   EuiHeader,
+  EuiSpacer,
   EuiText
 } from '@elastic/eui';
 import styled from '@emotion/styled';
@@ -41,6 +42,20 @@ const HeaderComponent: FunctionComponent = () => {
     }
   `;
 
+  const HomeLink = styled.a`
+   color: white;
+    font-weight: light;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+    padding: 10px;
+    font-size: 14px;
+    cursor:pointer;
+
+    &:hover {
+      background-color: rgba(143, 133, 200, 0.885);
+    }
+  `
+
   const menuIcon = (
     <EuiButtonIcon
       iconType="menu"
@@ -75,6 +90,8 @@ const HeaderComponent: FunctionComponent = () => {
                   </EuiFlyoutHeader>
                   <EuiFlyoutBody>
                     <EuiText>
+                      <HomeLink href='https://www.datasack.in' >Home</HomeLink>
+                      <EuiSpacer size='s'/>
                       <HeaderLink onClick={() => {
                         document.getElementById('window-pricing')?.scrollIntoView({ behavior: 'smooth' })
                       }}>Get <span style={{color:'orange',fontWeight:'bold'}}>Pricing</span></HeaderLink>

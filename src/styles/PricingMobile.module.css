@@ -450,12 +450,17 @@ p#ricingPanel:hover {
 /* ----up to this end---- */
 
 
+
+
 @media screen and (max-width:720px) {
     .pricing_web_view{
         display: none;
     }
     .pricing_mobile_view{
         display: block;
+    }
+    .showBigTitle{
+        display: none;
     }
 }
 
@@ -466,8 +471,16 @@ p#ricingPanel:hover {
     .pricing_mobile_view{
         display: none;
     }
+    .showBigTitle{
+        display: block;
+    }
 }
 
+@media screen and (max-width:1030px){
+    .showBigTitle{
+        display: none;
+    }
+}
 
 
 /* for web */
@@ -574,3 +587,4 @@ p#ricingPanel:hover {
     top: -100%;
     left: 200%;
   }
+

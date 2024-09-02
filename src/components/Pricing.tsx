@@ -180,9 +180,19 @@ const PricingPage: FunctionComponent = () => {
     return (
         <EuiPage style={{ background: 'transparent' }}>
             <EuiPageBody>
+                <div className={styles.showBigTitle}>
                 <div className="benefit-left-section" style={{ paddingTop: '50px', marginBottom: '-50px' }}>
                     <h2>Craft your own<span style={{ color: 'orange' }}> pricing</span></h2>
                 </div>
+                <EuiText>
+                    <p style={{ textAlign: 'center', fontSize: '20px' }}>
+                        Customize your plan with chosen technologies, with pricing calculated
+                        <b> monthly</b> to fit your needs.
+                    </p>
+                </EuiText>
+                </div>
+                <EuiSpacer size='l' />
+
                 <div className={styles.pricing_web_view}>
                     {isClient && <EnquiryModal closeModal={triggerEnquiryModal} isOpen={isModalOpen}
                         selectedTechnologies={processedData}
@@ -277,9 +287,9 @@ const PricingPage: FunctionComponent = () => {
 
 
                 <div className={styles.pricing_mobile_view}>
-                    {isModalOpen && 
-                    <EnquiryModal closeModal={triggerEnquiryModal} isOpen={isModalOpen} selectedTechnologies={processedData}
-                        selectedRawTechData={selectedTechnologies} customTechs={techs} />}
+                    {isModalOpen &&
+                        <EnquiryModal closeModal={triggerEnquiryModal} isOpen={isModalOpen} selectedTechnologies={processedData}
+                            selectedRawTechData={selectedTechnologies} customTechs={techs} />}
                     <div className={styles.pricingContainer}>
                         {Object.entries(technologies).map(([mainCategory, subCategories], idx) => (
                             <div key={idx} className={styles.mainCategory}>
@@ -315,7 +325,7 @@ const PricingPage: FunctionComponent = () => {
                                                     <div className={styles.techList}>
                                                         {techList.map((tech, techIdx) => (
                                                             <div key={techIdx} className={styles.techItem}>
-                                                                <EuiText style={{ fontWeight: 'normal', color: '#5C3C00',fontSize:'14px' }}>
+                                                                <EuiText style={{ fontWeight: 'normal', color: '#5C3C00', fontSize: '14px' }}>
                                                                     {tech}
                                                                 </EuiText>
                                                                 <div className={styles.quantityControls}>
@@ -325,7 +335,7 @@ const PricingPage: FunctionComponent = () => {
                                                                         size="s"
                                                                         onClick={() => decrementQuantity(tech)}
                                                                     />
-                                                                    <EuiText  className={styles.quantityDisplay}>
+                                                                    <EuiText className={styles.quantityDisplay}>
                                                                         {selectedTechnologies[tech] || 0}
                                                                     </EuiText>
                                                                     <EuiButtonIcon
@@ -347,7 +357,7 @@ const PricingPage: FunctionComponent = () => {
                     </div>
 
                 </div>
-                
+
                 <EuiHorizontalRule size='full' />
                 <div>
                     <CustomPricing onSelect={onSelect} customTechsOnReset={customTechs} />

@@ -150,7 +150,15 @@ const Home: FunctionComponent = () => {
               </div>
             </div>
             <ManagedServices />
+            
             <div id="window-pricing">
+            <div id="benefit_mobile_view">
+              <div className="benefit-left-section benefit-left-section-mobile">
+                <h2 style={{ fontSize: '25px', paddingTop: '10px' }}>Craft your own <span style={{ color: 'orange' }}>Pricing </span></h2>
+                <p style={{ fontSize: '15px' }}> Customize your plan with chosen technologies, with pricing calculated
+                <b> monthly</b> to fit your needs.</p>
+              </div>
+            </div>
               <PricingPage />
             </div>
           </div>

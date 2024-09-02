@@ -442,7 +442,7 @@ const BookingForm: FunctionComponent<BookingFormProps> = ({
               <EuiHorizontalRule size='half' />
               <h3 className='contact-us'>Contact us</h3>
               <EuiIcon type="mobile" color='orange' />
-              <a href='tel:+966560858596'>+966-560858596</a>
+              <a href='tel:+966560858596'>+966 560 85 85 96</a>
               <br />
               <EuiIcon type="email" color='orange' />
               <a className='email-link' href='mailto:sales@datasack.in'>sales@datasack.in</a>
