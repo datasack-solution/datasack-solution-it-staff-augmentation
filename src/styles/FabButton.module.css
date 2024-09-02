@@ -22,8 +22,8 @@
 /* home fab button */
 .fabButtonHome {
     position: fixed;
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
     bottom: 60%;
     right: 10px;
     background-color: transparent;
