@@ -1,5 +1,5 @@
 import React, { Fragment, FunctionComponent, useEffect, useState } from 'react';
-import { EuiTitle, EuiButtonIcon, EuiFlexGroup, EuiFlexItem, EuiFieldText, EuiSpacer, EuiText, EuiHorizontalRule } from '@elastic/eui';
+import { EuiTitle, EuiButtonIcon, EuiFlexGroup, EuiFlexItem, EuiFieldText, EuiSpacer, EuiText, EuiHorizontalRule, EuiButton } from '@elastic/eui';
 import styles from '../styles/PricingMobile.module.css';
 
 export interface CustomTech {
@@ -156,6 +156,7 @@ const CustomTechInput: FunctionComponent<CustomeTechInputProps> = ({
                                         <EuiFlexItem grow={false}>
                                             <EuiButtonIcon
                                                 color='success'
+                                                display='fill'
                                                 iconType="check"
                                                 onClick={() => saveChanges(index)}
                                                 aria-label="Save"
@@ -164,6 +165,7 @@ const CustomTechInput: FunctionComponent<CustomeTechInputProps> = ({
                                         <EuiFlexItem grow={false}>
                                             <EuiButtonIcon
                                                 color='accent'
+                                                display='fill'
                                                 iconType="cross"
                                                 onClick={() => cancelEdit(index)}
                                                 aria-label="Cancel"
