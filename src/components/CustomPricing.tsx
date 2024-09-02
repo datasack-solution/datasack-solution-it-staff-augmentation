@@ -156,6 +156,12 @@ const CustomTechInput: FunctionComponent<CustomeTechInputProps> = ({
                             <EuiFlexItem grow={false} style={{ padding: '0 5px' }}>
                                 {customTech.isEditing ? (
                                     <EuiFlexGroup gutterSize="s" responsive={false}>
+                                        <EuiButtonIcon
+                                            color='danger'
+                                            iconType="trash"
+                                            onClick={() => toggleDelete(index)}
+                                            aria-label="Delete"
+                                        />
                                         {/* <EuiFlexItem grow={false}>
                                             <EuiButtonIcon
                                                 color='success'
