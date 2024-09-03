@@ -8,13 +8,14 @@ import Footer from "@/components/Footer";
 import HeaderComponent from "@/components/Header";
 import ManagedServices from "@/components/ManagedServices";
 import PricingPage from "@/components/Pricing";
+import { useToastContext } from "@/components/toastContext";
 import { EuiButton, EuiCard, EuiFlexGroup, EuiFlexItem, EuiGlobalToastList, EuiPage, EuiPageBody, EuiSpacer } from "@elastic/eui";
 import Head from "next/head";
 import { Fragment, FunctionComponent, useEffect, useState } from "react";
 
 const Home: FunctionComponent = () => {
-  const [toasts, setToasts] = useState<Array<{ id: string, title: string, text: React.ReactNode }>>([]);
-
+  // const [toasts, setToasts] = useState<Array<{ id: string, title: string, text: React.ReactNode }>>([]);
+  const {toasts,setToasts} = useToastContext()
   useEffect(() => {
     const showToast = setTimeout(() => {
       setToasts([{

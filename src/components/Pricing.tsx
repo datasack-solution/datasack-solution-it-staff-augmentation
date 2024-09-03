@@ -18,6 +18,7 @@ import { Fragment, FunctionComponent, useEffect, useRef, useState } from 'react'
 import styles from '../styles/PricingMobile.module.css';
 import EnquiryModal from './EnquiryModal';
 import CustomPricing, { CustomTech } from './CustomPricing';
+import { useToastContext } from './toastContext';
 
 type Technologies = {
     [mainCategory: string]: {
@@ -100,10 +101,19 @@ const PricingPage: FunctionComponent = () => {
     const [paddingTop, setPaddingTop] = useState<number>(0);
     const slidingPanelRef = useRef<HTMLDivElement>(null);
     const [customTechs, setCustomTechs] = useState<CustomTech[]>([])
+    const {toasts,setToasts} = useToastContext()
+
+    const hasSelectedTechnologies = Object.values(selectedTechnologies).some((quantity) => quantity > 0);
 
     useEffect(() => {
         setClient(true)
     }, [])
+
+    useEffect(()=>{
+        if (hasSelectedTechnologies || customTechs.length>0){
+            setToasts([])
+        }
+    },[selectedTechnologies,customTechs])
 
     const techs = [...customTechs]
 
@@ -145,7 +155,6 @@ const PricingPage: FunctionComponent = () => {
     };
 
 
-    const hasSelectedTechnologies = Object.values(selectedTechnologies).some((quantity) => quantity > 0);
 
 
 
