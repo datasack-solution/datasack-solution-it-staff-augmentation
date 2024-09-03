@@ -5,20 +5,26 @@ import {
     EuiFieldText,
     EuiFlexGroup,
     EuiFlexItem,
+    EuiFormHelpText,
     EuiFormRow,
     EuiHorizontalRule,
     EuiPage,
     EuiPageBody,
     EuiPanel,
+    EuiRange,
     EuiSpacer,
     EuiText,
     EuiTitle,
+    useGeneratedHtmlId,
 } from '@elastic/eui';
 import { Fragment, FunctionComponent, useEffect, useRef, useState } from 'react';
 import styles from '../styles/PricingMobile.module.css';
 import EnquiryModal from './EnquiryModal';
 import CustomPricing, { CustomTech } from './CustomPricing';
 import { useToastContext } from './toastContext';
+import PriceRangeResponsive from './PriceRangeResponsive';
+
+
 
 type Technologies = {
     [mainCategory: string]: {
@@ -101,7 +107,8 @@ const PricingPage: FunctionComponent = () => {
     const [paddingTop, setPaddingTop] = useState<number>(0);
     const slidingPanelRef = useRef<HTMLDivElement>(null);
     const [customTechs, setCustomTechs] = useState<CustomTech[]>([])
-    const {toasts,setToasts} = useToastContext()
+    const { toasts, setToasts } = useToastContext()
+    const [duration, setDuration] = useState<number | number[]>(6);
 
     const hasSelectedTechnologies = Object.values(selectedTechnologies).some((quantity) => quantity > 0);
 
@@ -109,11 +116,11 @@ const PricingPage: FunctionComponent = () => {
         setClient(true)
     }, [])
 
-    useEffect(()=>{
-        if (hasSelectedTechnologies || customTechs.length>0){
+    useEffect(() => {
+        if (hasSelectedTechnologies || customTechs.length > 0) {
             setToasts([])
         }
-    },[selectedTechnologies,customTechs])
+    }, [selectedTechnologies, customTechs,hasSelectedTechnologies,setToasts])
 
     const techs = [...customTechs]
 
@@ -190,15 +197,15 @@ const PricingPage: FunctionComponent = () => {
         <EuiPage style={{ background: 'transparent' }}>
             <EuiPageBody>
                 <div className={styles.showBigTitle}>
-                <div className="benefit-left-section" style={{ paddingTop: '50px', marginBottom: '-50px' }}>
-                    <h2>Craft your own<span style={{ color: 'orange' }}> pricing</span></h2>
-                </div>
-                <EuiText>
-                    <p style={{ textAlign: 'center', fontSize: '20px' }}>
-                        Customize your plan with chosen technologies, with pricing calculated
-                        <b> monthly</b> to fit your needs.
-                    </p>
-                </EuiText>
+                    <div className="benefit-left-section" style={{ paddingTop: '50px', marginBottom: '-50px' }}>
+                        <h2>Craft your own<span style={{ color: 'orange' }}> pricing</span></h2>
+                    </div>
+                    <EuiText>
+                        <p style={{ textAlign: 'center', fontSize: '20px' }}>
+                            Customize your plan with chosen technologies, with pricing calculated
+                            <b> monthly</b> to fit your needs.
+                        </p>
+                    </EuiText>
                 </div>
                 <EuiSpacer size='l' />
 
@@ -206,13 +213,15 @@ const PricingPage: FunctionComponent = () => {
                     {isClient && <EnquiryModal closeModal={triggerEnquiryModal} isOpen={isModalOpen}
                         selectedTechnologies={processedData}
                         customTechs={techs}
-                        selectedRawTechData={selectedTechnologies} />}
+                        selectedRawTechData={selectedTechnologies} 
+                        duration={duration}
+                        />}
                     <div style={{ alignItems: 'center' }}>
                         {Object.entries(technologies).map(([mainCategory, subCategories], index) => (
                             <Fragment key={index}>
                                 {!groupedCategories.some(group => group.mainCategories.includes(mainCategory)) && (
                                     <Fragment >
-                                        <EuiTitle size="m" ><h2 style={{ color: '#B06607' }}>{mainCategory}</h2></EuiTitle>
+                                        <EuiTitle size="m" ><h2 style={{ color: '#FFA500' }}>{mainCategory}</h2></EuiTitle>
                                         <EuiSpacer size="l" />
                                         <EuiFlexGroup responsive wrap key={mainCategory}>
                                             {Object.entries(subCategories).map(([category, techList]) => (
@@ -251,7 +260,7 @@ const PricingPage: FunctionComponent = () => {
                                 <EuiFlexGroup responsive wrap>
                                     {group.mainCategories.map((mainCategory, mainIndex) => (
                                         <EuiFlexItem key={mainIndex}>
-                                            <EuiTitle size="m"><h2 style={{ color: '#B06607' }}>{mainCategory}</h2></EuiTitle>
+                                            <EuiTitle size="m"><h2 style={{ color: '#FFA500' }}>{mainCategory}</h2></EuiTitle>
                                         </EuiFlexItem>
                                     ))}
                                 </EuiFlexGroup>
@@ -298,7 +307,7 @@ const PricingPage: FunctionComponent = () => {
                 <div className={styles.pricing_mobile_view}>
                     {isModalOpen &&
                         <EnquiryModal closeModal={triggerEnquiryModal} isOpen={isModalOpen} selectedTechnologies={processedData}
-                            selectedRawTechData={selectedTechnologies} customTechs={techs} />}
+                            selectedRawTechData={selectedTechnologies} customTechs={techs} duration={duration}/>}
                     <div className={styles.pricingContainer}>
                         {Object.entries(technologies).map(([mainCategory, subCategories], idx) => (
                             <div key={idx} className={styles.mainCategory}>
@@ -370,6 +379,20 @@ const PricingPage: FunctionComponent = () => {
                 <EuiHorizontalRule size='full' />
                 <div>
                     <CustomPricing onSelect={onSelect} customTechsOnReset={customTechs} />
+                </div>
+                
+                <div>
+                <div className={styles.pricing_mobile_view}>
+                    <p style={{ color: '#FFA500', fontSize: '20px' }}>Project Duration ?</p>
+                    <EuiSpacer size='m' />
+                </div>
+                <div className={styles.pricing_web_view}>
+                    <EuiTitle>
+                        <h3 style={{ color: '#FFA500' }}>Project Duration ?</h3>
+                    </EuiTitle>
+                    <EuiSpacer size="m" />
+                </div>
+                <PriceRangeResponsive onDurationChange={(d)=>{setDuration(d)}}/>
                 </div>
 
                 <div style={{ paddingTop: `${paddingTop * 1.25}px` }}>

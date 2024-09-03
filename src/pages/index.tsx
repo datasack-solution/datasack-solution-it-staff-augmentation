@@ -9,13 +9,25 @@ import HeaderComponent from "@/components/Header";
 import ManagedServices from "@/components/ManagedServices";
 import PricingPage from "@/components/Pricing";
 import { useToastContext } from "@/components/toastContext";
-import { EuiButton, EuiCard, EuiFlexGroup, EuiFlexItem, EuiGlobalToastList, EuiPage, EuiPageBody, EuiSpacer } from "@elastic/eui";
+import { EuiButton, EuiCard, EuiFlexGroup, EuiFlexItem, EuiGlobalToastList, EuiPage, EuiPageBody, EuiRange, EuiSpacer } from "@elastic/eui";
 import Head from "next/head";
 import { Fragment, FunctionComponent, useEffect, useState } from "react";
-
+// Custom range labels and ticks
+const points = [
+  { label: '1 month', value: 1 },
+  { label: '2 months', value: 2 },
+  { label: '3 months', value: 3 },
+  { label: '4 months', value: 4 },
+  { label: '5 months', value: 5 },
+  { label: '6 months', value: 6 },
+  { label: '1 year', value: 12 },
+  { label: '1.5 years', value: 18 },
+  { label: '2 years', value: 24 },
+  { label: '2+ years', value: 30 }, // Assuming 2+ years is equivalent to 30 months for simplicity
+];
 const Home: FunctionComponent = () => {
   // const [toasts, setToasts] = useState<Array<{ id: string, title: string, text: React.ReactNode }>>([]);
-  const {toasts,setToasts} = useToastContext()
+  const { toasts, setToasts } = useToastContext()
   useEffect(() => {
     const showToast = setTimeout(() => {
       setToasts([{
@@ -27,6 +39,19 @@ const Home: FunctionComponent = () => {
 
     showToast
   }, []);
+
+  // Function to format the labels
+  const formatLabel = (value: number) => {
+    const point = points.find(p => p.value === value);
+    return point ? point.label : '';
+  };
+
+  // Create tick marks
+  const ticks = points.map(point => ({
+    value: point.value,
+    label: formatLabel(point.value),
+  }));
+
 
   const analyticsIcons = [{
     id: 1,
@@ -49,7 +74,7 @@ const Home: FunctionComponent = () => {
     <Fragment>
       <Head>
         <title>IT Staff Augmentation Services in Dammam and Riyadh | Fill Your Skill Gaps Fast</title>
-        <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1"/>
+        <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1" />
         <meta title="title" content="IT Staff Augmentation Services Riyadh | Fill Your Skill Gaps Fast" />
         <meta name="description" content="Get the right talent at the right price. Find DataSack's IT Staff Augmentation Services in Dammam and Riyadh. Resolve skill shortages for project excellence." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -76,10 +101,10 @@ const Home: FunctionComponent = () => {
             <FabButton />
           </div>
           <div>
-            <FabButtonHome/>
+            <FabButtonHome />
           </div>
           <div>
-          <FabButtonCallus/>
+            <FabButtonCallus />
           </div>
 
           <div>
@@ -151,18 +176,22 @@ const Home: FunctionComponent = () => {
               </div>
             </div>
             <ManagedServices />
-            
+
             <div id="window-pricing">
-            <div id="benefit_mobile_view">
-              <div className="benefit-left-section benefit-left-section-mobile">
-                <h2 style={{ fontSize: '25px', paddingTop: '10px' }}>Craft your own <span style={{ color: 'orange' }}>Pricing </span></h2>
-                <p style={{ fontSize: '15px' }}> Customize your plan with chosen technologies, with pricing calculated
-                <b> monthly</b> to fit your needs.</p>
+              <div id="benefit_mobile_view">
+                <div className="benefit-left-section benefit-left-section-mobile">
+                  <h2 style={{ fontSize: '25px', paddingTop: '10px' }}>Craft your own <span style={{ color: 'orange' }}>Pricing </span></h2>
+                  <p style={{ fontSize: '15px' }}> Customize your plan with chosen technologies, with pricing calculated
+                    <b> monthly</b> to fit your needs.</p>
+                </div>
               </div>
-            </div>
               <PricingPage />
             </div>
+            <div>
+            <EuiSpacer/>
+            </div>
           </div>
+
 
           <Footer />
         </EuiPageBody>

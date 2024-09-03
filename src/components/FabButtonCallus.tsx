@@ -10,7 +10,7 @@ const FabButtonCallus:FunctionComponent = () =>{
     className={styles.fabButtonCallus}
     rel="noopener noreferrer"
   >
-    <EnquiryModal isOpen={isModalOpen} closeModal={(isClosed) => { setIsModalOpen(!isClosed) }} customTechs={[]}  selectedRawTechData={{}}/>
+    <EnquiryModal isOpen={isModalOpen} closeModal={(isClosed) => { setIsModalOpen(!isClosed) }} customTechs={[]}  selectedRawTechData={{}} duration={[]}/>
 
     <Image width={200} height={200} src='/callus-plain.png' alt="callus" onClick={()=>setIsModalOpen(true)}
     /> 

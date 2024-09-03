@@ -76,12 +76,14 @@ export interface BookingFormProps {
   selectedTechnologies?: CuratedTechnologyData;
   selectedRawTechData: { [key: string]: number }
   customTechs?: CustomTech[]
+  duration:number|number[]
 }
 
 const BookingForm: FunctionComponent<BookingFormProps> = ({
   selectedTechnologies,
   selectedRawTechData,
-  customTechs
+  customTechs,
+  duration
 }) => {
   const { register, handleSubmit, formState: { errors }, watch, setValue,setError,clearErrors } = useForm<EnquiryForm>();
   const [expandedCategories, setExpandedCategories] = useState<string[]>([]);
@@ -151,7 +153,8 @@ const BookingForm: FunctionComponent<BookingFormProps> = ({
         const templateParams = {
           ...formDataEmail,
           technologies: technologyArray,
-          customTechnologies: customTechsData
+          customTechnologies: customTechsData,
+          duration:duration==24 ? `${duration}+ Months` : `${duration} Months`
         };
 
         setIsLoading(true);
@@ -400,6 +403,7 @@ const BookingForm: FunctionComponent<BookingFormProps> = ({
 
               {selectedTechnologies && <Fragment>
                 <h3>Selected Technologies:</h3>
+                <b style={{color:'orange',marginLeft:'5px'}}>Duration:</b> {duration} Months
                 {Object.entries(selectedTechnologies).map(([mainCategory, subCategories]) => (
                   <div key={mainCategory} className={styles.categoryWrapper}>
                     <div onClick={() => toggleCategory(mainCategory)} className={styles.mainCategory}>

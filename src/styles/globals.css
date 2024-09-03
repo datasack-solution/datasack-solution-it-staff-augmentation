@@ -527,3 +527,9 @@
     height: 100px;
     background: linear-gradient(to bottom, transparent, black);
   }
+
+  /* range style */
+  .euiRangeTicks__label {
+    font-size: 12px; /* Adjust font size */
+    margin-top: 5px; /* Adjust margin */
+  }

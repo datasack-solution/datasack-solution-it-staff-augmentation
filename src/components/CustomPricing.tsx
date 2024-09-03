@@ -1,5 +1,5 @@
-import React, { Fragment, FunctionComponent, useEffect, useState } from 'react';
-import { EuiTitle, EuiButtonIcon, EuiFlexGroup, EuiFlexItem, EuiFieldText, EuiSpacer, EuiText, EuiHorizontalRule, EuiButton } from '@elastic/eui';
+import { EuiButtonIcon, EuiFieldText, EuiFlexGroup, EuiFlexItem, EuiFormHelpText, EuiRange, EuiSpacer, EuiText, EuiTitle } from '@elastic/eui';
+import { Fragment, FunctionComponent, useEffect, useState } from 'react';
 import styles from '../styles/PricingMobile.module.css';
 
 export interface CustomTech {
@@ -60,19 +60,19 @@ const CustomTechInput: FunctionComponent<CustomeTechInputProps> = ({
 
     const saveChanges = (index: number) => {
         const newCustomTechs = [...customTechs];
-            if (newCustomTechs[index].tech.trim() === '') {
-                newCustomTechs[index].hasError = true;
-            } else if (newCustomTechs[index].quantity == '') {
-                newCustomTechs[index].hasError = true
-            } else {
-                newCustomTechs[index].isEditing = false;
-                newCustomTechs[index].hasError = false;
-            }
-            setCustomTechs(newCustomTechs);
-            if (newCustomTechs[index].hasError == false) {
-                const filteredTechData = customTechs.filter(tech => tech.tech !== '' && tech.quantity != '')
-                onSelect(filteredTechData)
-            }
+        if (newCustomTechs[index].tech.trim() === '') {
+            newCustomTechs[index].hasError = true;
+        } else if (newCustomTechs[index].quantity == '') {
+            newCustomTechs[index].hasError = true
+        } else {
+            newCustomTechs[index].isEditing = false;
+            newCustomTechs[index].hasError = false;
+        }
+        setCustomTechs(newCustomTechs);
+        if (newCustomTechs[index].hasError == false) {
+            const filteredTechData = customTechs.filter(tech => tech.tech !== '' && tech.quantity != '')
+            onSelect(filteredTechData)
+        }
 
     };
 
@@ -96,12 +96,12 @@ const CustomTechInput: FunctionComponent<CustomeTechInputProps> = ({
     return (
         <div style={{ paddingBottom: '50px' }}>
             <div className={styles.pricing_mobile_view}>
-                <p style={{ color: '#B06607', fontSize: '20px' }}>Do you want to add custom tech&apos;s?</p>
-                <EuiSpacer size='m'/>
+                <p style={{ color: '#FFA500', fontSize: '20px' }}>Do you want to add custom tech&apos;s?</p>
+                <EuiSpacer size='m' />
             </div>
             <div className={styles.pricing_web_view}>
                 <EuiTitle>
-                    <h3 style={{ color: '#B06607' }}>Do you want to add custom tech&apos;s?</h3>
+                    <h3 style={{ color: '#FFA500' }}>Do you want to add custom tech&apos;s?</h3>
                 </EuiTitle>
                 <EuiSpacer size="m" />
             </div>
@@ -199,13 +199,13 @@ const CustomTechInput: FunctionComponent<CustomeTechInputProps> = ({
                                 )}
                             </EuiFlexItem>
 
-                            
+
                         </EuiFlexGroup>
                     </Fragment>
                 ))}
             </div>
             <EuiSpacer size="m" />
-            <div style={{ cursor: 'pointer',backgroundColor:"#F8F7F5", display: 'inline-flex', boxShadow: "rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px", padding: '5px', alignItems: 'center', borderRadius: '5%' }} onClick={addCustomTech}>
+            <div style={{ cursor: 'pointer', backgroundColor: "#F8F7F5", display: 'inline-flex', boxShadow: "rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px", padding: '5px', alignItems: 'center', borderRadius: '5%' }} onClick={addCustomTech}>
                 <p style={{ color: 'black' }}>Add Tech</p>
                 <EuiButtonIcon
                     iconType="plusInCircleFilled"

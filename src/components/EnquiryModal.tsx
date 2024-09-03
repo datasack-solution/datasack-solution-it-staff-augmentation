@@ -15,6 +15,7 @@ export interface EnquiryModalProps {
   selectedTechnologies?: CuratedTechnologyData
   selectedRawTechData: { [key: string]: number }
   customTechs: CustomTech[]
+  duration:number|number[]
 }
 
 const EnquiryModal: FunctionComponent<EnquiryModalProps> = ({
@@ -22,7 +23,8 @@ const EnquiryModal: FunctionComponent<EnquiryModalProps> = ({
   closeModal,
   selectedTechnologies,
   selectedRawTechData,
-  customTechs
+  customTechs,
+  duration
 }) => {
   const modalTitleId = useGeneratedHtmlId();
 
@@ -38,7 +40,7 @@ const EnquiryModal: FunctionComponent<EnquiryModalProps> = ({
           <EuiModalHeader>
           </EuiModalHeader>
           <EuiModalBody >
-            <BookingForm selectedTechnologies={selectedTechnologies} selectedRawTechData={selectedRawTechData} customTechs={customTechs} />
+            <BookingForm selectedTechnologies={selectedTechnologies} selectedRawTechData={selectedRawTechData} customTechs={customTechs} duration={duration} />
           </EuiModalBody>
         </EuiModal>
       )}
