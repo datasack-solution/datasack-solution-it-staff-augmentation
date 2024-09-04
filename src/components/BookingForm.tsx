@@ -304,7 +304,8 @@ const BookingForm: FunctionComponent<BookingFormProps> = ({
             {(selectedTechnologies && hasEnquiryWithSkillsets) && (currentBreakpoint=='s' || currentBreakpoint=='xs') && <Fragment>
                 <EuiText color='orange'><b>Selected Technologies:</b></EuiText>
                 <EuiSpacer size='m'/>
-                <b style={{color:'orange'}}>Duration: </b>{duration} Months
+              {duration!==24 && <><b style={{color:'orange'}}>Duration: </b>{duration} Months</> }
+              {duration==24 && <><b style={{color:'orange'}}>Duration: </b>{duration}+ Months</> }
               
                 {Object.entries(selectedTechnologies).map(([mainCategory, subCategories]) => (
                   <div key={mainCategory}>
@@ -460,7 +461,8 @@ const BookingForm: FunctionComponent<BookingFormProps> = ({
               {(selectedTechnologies && hasEnquiryWithSkillsets) && (currentBreakpoint!=='s' && currentBreakpoint!=='xs') && <Fragment>
                 <h3>Selected Technologies:</h3>
                 
-                <b style={{color:'orange',marginLeft:'5px'}}>Duration:</b> {duration} Months
+                {duration!==24 && <><b style={{color:'orange',marginLeft:'5px'}}>Duration: </b>{duration} Months</> }
+              {duration==24 && <><b style={{color:'orange',marginLeft:'5px'}}>Duration: </b>{duration}+ Months</> }
               
                 {Object.entries(selectedTechnologies).map(([mainCategory, subCategories]) => (
                   <div key={mainCategory} className={styles.categoryWrapper}>
