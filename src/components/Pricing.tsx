@@ -193,15 +193,10 @@ const PricingPage: FunctionComponent = () => {
         });
     };
 
-
-
     const triggerEnquiryModal = () => {
         setIsModalOpen(!isModalOpen);
+        setModalOpened(true)
     };
-
-
-
-
 
     const onSelect = (customTechs: CustomTech[]) => {
         setCustomTechs(customTechs)

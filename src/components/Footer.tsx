@@ -89,6 +89,13 @@ const Footer = () => {
                         <EuiLink href="tel:+966560858596" className={styles.footer_link}>+966-560858596</EuiLink>
                     </EuiText>
                 </EuiFlexItem>
+                <EuiFlexItem  grow={false} className={styles.footer_contact}>
+                    <EuiText >
+                        <strong >ISO/IEC 27001:2022</strong>
+                        <br />
+                    </EuiText>
+                    <strong style={{textAlign:'center'}}>CERTIFIED</strong>
+                </EuiFlexItem>
             </EuiFlexGroup>
             <EuiSpacer size='l' />
         </div>

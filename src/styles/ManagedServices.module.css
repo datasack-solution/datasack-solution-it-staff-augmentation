@@ -12,6 +12,7 @@
 .page .container {
   display: flex;
   align-items: center;
+  border-color: #000;
 }
 
 .page .container .card {
@@ -22,7 +23,7 @@
   margin: 0 auto;
   background: #000;
   border-radius: 15px;
-  box-shadow: 0 15px 60px rgba(0, 0, 0, 0.5);
+  box-shadow: 10px 15px 15px rgba(0, 0, 0, 0.4);
 }
 
 .page .container .card .face {
@@ -67,35 +68,28 @@
   font-size: 30px;
   font-weight: 600;
   text-align: center;
-  color: #fff;
+  color: white;
   transition: 0.5s;
-  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  text-shadow: 0 2px 1px rgba(0, 0, 0, 0.4);
   z-index: 10;
 }
 
 .page .container .card:hover .face.face2 {
   height: 60px;
   color: white;
+  border-radius: 15px;
 }
 
 .page .container .card:hover .face.face2 h2 {
   font-size: 1.5em;
 }
 
+/* cbcaca */
 .page .container .card:nth-child(1) .face.face2 {
-  background-image: linear-gradient(40deg, orange 30%, black 100%);
+  background-image: linear-gradient(40deg, rgb(254, 186, 60) 30%, #cbcaca 100%);  
   border-radius: 15px;
 }
 
-.page .container .card:nth-child(2) .face.face2 {
-  background-image: linear-gradient(40deg, #fc00ff 0%, #00fffc 45%, #fffc00 100%);
-  border-radius: 15px;
-}
-
-.page .container .card:nth-child(3) .face.face2 {
-  background-image: linear-gradient(40deg, #00fffc 0%, #fc00ff 45%, #fffc00 100%);
-  border-radius: 15px;
-}
 
 .showDescription .face1 {
   display: flex;

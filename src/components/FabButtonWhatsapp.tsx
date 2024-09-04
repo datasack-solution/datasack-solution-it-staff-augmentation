@@ -32,7 +32,7 @@ const FabButton:FunctionComponent = () =>{
     target="_blank"
     rel="noopener noreferrer"
   >
-    <Image width={300} height={300} src='/whatsapp-plain.png' alt="WhatsApp" /> 
+    <Image width={300} height={300} src='/whatsapp1.png' alt="WhatsApp" /> 
   </a>
 }
 

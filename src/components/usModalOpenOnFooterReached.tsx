@@ -26,6 +26,8 @@ const useModalOnScroll = (setIsModalOpen:(open:boolean)=>void) => {
 
     if (!section) return;
 
+    console.log("model opened status:",isModelOpened)
+
     if (isModelOpened){
         return;
     }

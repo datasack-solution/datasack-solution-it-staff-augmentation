@@ -22,8 +22,8 @@
 /* home fab button */
 .fabButtonHome {
     position: fixed;
-    width: 35px;
-    height: 35px;
+    width: 43px;
+    height: 43px;
     bottom: 60%;
     right: 10px;
     background-color: transparent;
@@ -44,8 +44,8 @@
   /* callus fab button */
 .fabButtonCallus {
   position: fixed;
-  width: 40px;
-  height: 40px;
+  width: 47px;
+  height: 47px;
   bottom: 50%;
   right: 10px;
   background-color: transparent;

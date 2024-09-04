@@ -1,4 +1,5 @@
 import AnalyticsSlider from "@/components/Analytics_Slider";
+import AnalyticsWeb from "@/components/Analytics_Web";
 import Benefits from "@/components/Benefits";
 import BenefitsSlider from "@/components/Benefits_Slider";
 import FabButtonCallus from "@/components/FabButtonCallus";
@@ -9,29 +10,16 @@ import HeaderComponent from "@/components/Header";
 import ManagedServices from "@/components/ManagedServices";
 import PricingPage from "@/components/Pricing";
 import { useToastContext } from "@/components/toastContext";
-import {  EuiCard, EuiFlexGroup, EuiFlexItem, EuiGlobalToastList, EuiPage, EuiPageBody, EuiSpacer } from "@elastic/eui";
+import { EuiCard, EuiFlexGroup, EuiFlexItem, EuiGlobalToastList, EuiPage, EuiPageBody, EuiSpacer } from "@elastic/eui";
 import Head from "next/head";
+import Image from "next/image";
 import { Fragment, FunctionComponent, useEffect } from "react";
 
 const Home: FunctionComponent = () => {
   const { toasts, setToasts } = useToastContext()
 
-  const analyticsIcons = [{
-    id: 1,
-    title: "2",
-    description: 'weeks to allocate IT experts'
-  },
-  {
-    id: 2,
-    title: "8%",
-    description: 'can join immediately'
-  },
-  {
-    id: 3,
-    title: "4.9/5",
-    description: 'on Clutch'
-  }
-  ];
+
+
 
   return (
     <Fragment>
@@ -88,26 +76,7 @@ const Home: FunctionComponent = () => {
           </div>
 
           <div id="analytics-section" className="analytics-section">
-            <div id="window_view_analytics">
-              <div style={{ paddingBottom: '50px' }}>
-                <EuiCard hasBorder={true}
-                  title=''
-                >
-                  <p style={{ fontSize: '25px' }}>Augment your software team with IT professionals via IT Team Augmentation Services in Dammam and Riyadh.</p>
-                </EuiCard>
-              </div>
-              <EuiFlexGroup gutterSize="l" key={12}>
-                {analyticsIcons.map((item, idx) => (
-                  <EuiFlexItem key={idx}>
-                    <EuiCard
-                      style={{ padding: '50px' }}
-                      title={<span key={idx} style={{ fontSize: '2.3vw' }}>{item.title}</span>}
-                      description={<span key={idx} style={{ fontSize: '1.2vw' }}>{item.description}</span>}
-                    />
-                  </EuiFlexItem>))}
-              </EuiFlexGroup>
-            </div>
-
+          <AnalyticsWeb/>
             <div id="mobile_view_analytics">
               <div style={{ paddingBottom: '50px' }}>
                 <EuiCard hasBorder={true}
@@ -151,7 +120,7 @@ const Home: FunctionComponent = () => {
               <PricingPage />
             </div>
             <div>
-            <EuiSpacer/>
+              <EuiSpacer />
             </div>
           </div>
 
