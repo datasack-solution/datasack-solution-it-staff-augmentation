@@ -14,9 +14,11 @@ import Image from 'next/image';
 import { Fragment, FunctionComponent, useState } from 'react';
 import EnquiryModal from './EnquiryModal';
 import Link from 'next/link';
+import { useCallusModalOpenedContext } from './callusModalContext';
 
 const HeaderComponent: FunctionComponent = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const {setModalOpened} =useCallusModalOpenedContext()
   const [isFlyoutVisible, setIsFlyoutVisible] = useState(false);
 
   const HeaderContainer = styled.div`
@@ -99,8 +101,9 @@ const HeaderComponent: FunctionComponent = () => {
                         document.getElementById('managed-service-section')?.scrollIntoView({ behavior: 'smooth' })
                       }}>Managed Services</HeaderLink>
                      <HeaderLink onClick={() => {
-                        setIsModalOpen(true)
-                        setIsFlyoutVisible(false)
+                        setIsModalOpen(true);
+                        setModalOpened(true);
+                        setIsFlyoutVisible(false);
                       }}>Call Us</HeaderLink>
                     </EuiText>
                   </EuiFlyoutBody>
@@ -121,7 +124,8 @@ const HeaderComponent: FunctionComponent = () => {
               </EuiFlexItem>
               <EuiFlexItem grow={false}>
                 <HeaderLink onClick={() => {
-                  setIsModalOpen(true)
+                  setIsModalOpen(true);
+                  setModalOpened(true);
                 }}>Call Us</HeaderLink>
               </EuiFlexItem>
             
@@ -130,7 +134,7 @@ const HeaderComponent: FunctionComponent = () => {
         </HeaderContainer>
       </EuiHeader>
 
-      <EnquiryModal isOpen={isModalOpen} closeModal={(isClosed) => { setIsModalOpen(!isClosed) }} customTechs={[]}  selectedRawTechData={{}} duration={[]}/>
+      <EnquiryModal hasEnquiryWithSkillsets={false} isOpen={isModalOpen} closeModal={(isClosed) => { setIsModalOpen(!isClosed) }} customTechs={[]}  selectedRawTechData={{}} duration={[]}/>
     </Fragment>
   );
 };

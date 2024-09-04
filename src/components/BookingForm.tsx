@@ -1,5 +1,5 @@
 import { clientApiService, ClientRequestData } from '@/api/userApi';
-import { EuiButtonIcon, EuiFlexGroup, EuiFlexItem, EuiHorizontalRule, EuiIcon, EuiPanel, EuiSkeletonCircle, EuiSkeletonLoading, EuiSkeletonRectangle, EuiSkeletonText, EuiSkeletonTitle, EuiSpacer, EuiText } from '@elastic/eui';
+import { EuiButtonIcon, EuiFlexGroup, EuiFlexItem, EuiHorizontalRule, EuiIcon, EuiPanel, EuiSkeletonCircle, EuiSkeletonLoading, EuiSkeletonRectangle, EuiSkeletonText, EuiSkeletonTitle, EuiSpacer, EuiText, EuiTitle, useCurrentEuiBreakpoint, useEuiBreakpoint, useEuiMaxBreakpoint } from '@elastic/eui';
 import Image from 'next/image';
 import { Fragment, FunctionComponent, useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
@@ -77,19 +77,22 @@ export interface BookingFormProps {
   selectedRawTechData: { [key: string]: number }
   customTechs?: CustomTech[]
   duration:number|number[]
+  hasEnquiryWithSkillsets:boolean
 }
 
 const BookingForm: FunctionComponent<BookingFormProps> = ({
   selectedTechnologies,
   selectedRawTechData,
   customTechs,
-  duration
+  duration,
+  hasEnquiryWithSkillsets
 }) => {
   const { register, handleSubmit, formState: { errors }, watch, setValue,setError,clearErrors } = useForm<EnquiryForm>();
   const [expandedCategories, setExpandedCategories] = useState<string[]>([]);
   const [isSuccess, setSuccess] = useState(false)
   const [isFailed, setIsFailed] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
+  const currentBreakpoint = useCurrentEuiBreakpoint()
 
   const toggleCategory = (mainCategory: string) => {
     if (expandedCategories.includes(mainCategory)) {
@@ -222,8 +225,7 @@ const BookingForm: FunctionComponent<BookingFormProps> = ({
   ]
 
   const phone = watch('phone')
-  const email = watch('email')
-
+  const email = watch('email')  
   return (
 
     <EuiSkeletonLoading
@@ -287,12 +289,66 @@ const BookingForm: FunctionComponent<BookingFormProps> = ({
       loadedContent={
         <div className={styles.container}>
           <div className={styles.formSection}>
-            <h2 style={{ fontSize: '35px', fontWeight: 'bold' }}>
+           {!hasEnquiryWithSkillsets && <h2 style={{ fontSize: '28px', fontWeight: 'bold' }}>
               <span style={{ color: 'orange' }}>Book</span> a Call
-            </h2>
-            <p style={{ fontWeight: 'bold' }}>
+            </h2>}
+            {hasEnquiryWithSkillsets && <h2 style={{ fontSize: '28px', fontWeight: 'bold' }}>
+              <span style={{ color: 'orange' }}>Request</span> Quotation For
+            </h2>}
+            {(currentBreakpoint!=='s' && currentBreakpoint!=='xs') && hasEnquiryWithSkillsets && <EuiSpacer/>}
+
+           {!hasEnquiryWithSkillsets && <p style={{ fontWeight: 'bold' }}>
               Coffee Break with DataSack? Schedule a Call About Your Tech Needs!
-            </p>
+            </p>}
+
+            {(selectedTechnologies && hasEnquiryWithSkillsets) && (currentBreakpoint=='s' || currentBreakpoint=='xs') && <Fragment>
+                <EuiText color='orange'><b>Selected Technologies:</b></EuiText>
+                <EuiSpacer size='m'/>
+                <b style={{color:'orange'}}>Duration: </b>{duration} Months
+              
+                {Object.entries(selectedTechnologies).map(([mainCategory, subCategories]) => (
+                  <div key={mainCategory}>
+                    <div onClick={() => toggleCategory(mainCategory)} className={styles.mainCategory}>
+                      <h2>{mainCategory}</h2>
+                      <EuiButtonIcon
+                        style={{color:'orange'}}
+                        aria-label={`Toggle ${mainCategory}`}
+                        iconType={expandedCategories.includes(mainCategory) ? 'arrowDown' : 'arrowRight'}
+                      />
+                    </div>
+
+                    {expandedCategories.includes(mainCategory) && (
+                      <div >
+                        {Object.entries(subCategories).map(([subCategory, count], index) => (
+                          <div key={index} className={styles.subCategory}>
+                            <EuiText size='xs'>{subCategory}: {count}</EuiText>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                ))}
+                {customTechs != undefined && customTechs.length > 0 && <Fragment>
+                  <div >
+                    <div onClick={() => toggleCategory('CustomTech')} className={styles.mainCategory}>
+                      <h2>Custom Techs</h2>
+                      <EuiButtonIcon
+                      style={{color:'orange'}}
+                        aria-label={`Toggle CustomTech`}
+                        iconType={expandedCategories.includes('CustomTech') ? 'arrowDown' : 'arrowRight'}
+                      />
+                    </div>
+                    {customTechs.map((tech, idx) => <>
+                      {expandedCategories.includes('CustomTech') && <div key={idx} className={styles.subCategory}>
+                        <EuiText size='xs'>{tech.tech}: {tech.quantity}</EuiText>
+                      </div>}
+                    </>
+                    )}
+                  </div>
+                </Fragment>}
+                <EuiHorizontalRule size='half' />
+              </Fragment>}
+              
 
             {isSuccess && <SuccessModal isSuccess={true} onClose={closeModal} />}
             {isFailed && <SuccessModal isSuccess={false} onClose={closeModal} />}
@@ -401,9 +457,11 @@ const BookingForm: FunctionComponent<BookingFormProps> = ({
                 <span style={{ fontWeight: 'bold', fontSize: '25px', lineHeight: '1.5' }}>Free Consultation</span> - Level Up Your IT with DataSack Experts!
               </h3>
 
-              {selectedTechnologies && <Fragment>
+              {(selectedTechnologies && hasEnquiryWithSkillsets) && (currentBreakpoint!=='s' && currentBreakpoint!=='xs') && <Fragment>
                 <h3>Selected Technologies:</h3>
+                
                 <b style={{color:'orange',marginLeft:'5px'}}>Duration:</b> {duration} Months
+              
                 {Object.entries(selectedTechnologies).map(([mainCategory, subCategories]) => (
                   <div key={mainCategory} className={styles.categoryWrapper}>
                     <div onClick={() => toggleCategory(mainCategory)} className={styles.mainCategory}>
@@ -442,7 +500,9 @@ const BookingForm: FunctionComponent<BookingFormProps> = ({
                     )}
                   </div>
                 </Fragment>}
+
               </Fragment>}
+
               <EuiHorizontalRule size='half' />
               <h3 className='contact-us'>Contact us</h3>
               <EuiIcon type="mobile" color='orange' />

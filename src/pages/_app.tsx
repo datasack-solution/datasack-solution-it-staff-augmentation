@@ -1,3 +1,4 @@
+import { IsCallusModalOpenedProvider } from "@/components/callusModalContext";
 import { ToastProvider } from "@/components/toastContext";
 import "@/styles/globals.css";
 import { EuiProvider } from '@elastic/eui';
@@ -22,7 +23,9 @@ export default function App({ Component, pageProps }: AppProps) {
   //   };
   // }, [router.events]);
 
-  return <ToastProvider><EuiProvider colorMode="light">
+  return <ToastProvider>
+    <IsCallusModalOpenedProvider>
+    <EuiProvider colorMode="light">
      {/* <GoogleAnalytics 
         gaId="G-RD5F5DH96G"          
         dataLayerName="it-staff-augmentation-datalayer"   
@@ -31,5 +34,7 @@ export default function App({ Component, pageProps }: AppProps) {
     <Component {...pageProps} />
     {/* <GoogleTagManager gtmId={'AW-16583886159'}/> */}
     <GoogleTagManager gtmId={'GTM-PJGGKTVQ'}/>
-  </EuiProvider></ToastProvider>;
+  </EuiProvider>
+  </IsCallusModalOpenedProvider>
+  </ToastProvider>;
 }

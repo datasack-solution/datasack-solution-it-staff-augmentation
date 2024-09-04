@@ -9,49 +9,12 @@ import HeaderComponent from "@/components/Header";
 import ManagedServices from "@/components/ManagedServices";
 import PricingPage from "@/components/Pricing";
 import { useToastContext } from "@/components/toastContext";
-import { EuiButton, EuiCard, EuiFlexGroup, EuiFlexItem, EuiGlobalToastList, EuiPage, EuiPageBody, EuiRange, EuiSpacer } from "@elastic/eui";
+import {  EuiCard, EuiFlexGroup, EuiFlexItem, EuiGlobalToastList, EuiPage, EuiPageBody, EuiSpacer } from "@elastic/eui";
 import Head from "next/head";
-import { Fragment, FunctionComponent, useEffect, useState } from "react";
-// Custom range labels and ticks
-const points = [
-  { label: '1 month', value: 1 },
-  { label: '2 months', value: 2 },
-  { label: '3 months', value: 3 },
-  { label: '4 months', value: 4 },
-  { label: '5 months', value: 5 },
-  { label: '6 months', value: 6 },
-  { label: '1 year', value: 12 },
-  { label: '1.5 years', value: 18 },
-  { label: '2 years', value: 24 },
-  { label: '2+ years', value: 30 }, // Assuming 2+ years is equivalent to 30 months for simplicity
-];
+import { Fragment, FunctionComponent, useEffect } from "react";
+
 const Home: FunctionComponent = () => {
-  // const [toasts, setToasts] = useState<Array<{ id: string, title: string, text: React.ReactNode }>>([]);
   const { toasts, setToasts } = useToastContext()
-  useEffect(() => {
-    const showToast = setTimeout(() => {
-      setToasts([{
-        id: 'pricing-toast',
-        title: 'Do you want to know pricing?',
-        text: <EuiButton style={{ backgroundColor: 'orange', color: 'white' }} onClick={() => document.getElementById('window-pricing')?.scrollIntoView({ behavior: 'smooth' })}>Get Pricing</EuiButton>
-      }]);
-    }, 10000);
-
-    showToast
-  }, []);
-
-  // Function to format the labels
-  const formatLabel = (value: number) => {
-    const point = points.find(p => p.value === value);
-    return point ? point.label : '';
-  };
-
-  // Create tick marks
-  const ticks = points.map(point => ({
-    value: point.value,
-    label: formatLabel(point.value),
-  }));
-
 
   const analyticsIcons = [{
     id: 1,
@@ -194,6 +157,7 @@ const Home: FunctionComponent = () => {
 
 
           <Footer />
+          <div id="footer-div"></div>
         </EuiPageBody>
       </EuiPage>
     </Fragment>

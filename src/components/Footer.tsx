@@ -80,11 +80,9 @@ const Footer = () => {
                     </EuiFlexGroup>
                 </EuiFlexItem>
 
-
-
-                <EuiFlexItem grow={false} className={styles.footer_contact}>
-                    <EuiText>
-                        <strong>Contact Us:</strong>
+                <EuiFlexItem  grow={false} className={styles.footer_contact}>
+                    <EuiText >
+                        <strong id='contact-us'>Contact Us:</strong>
                         <br />
                         <EuiLink href="mailto:sales@datasack.in" className={styles.footer_link}>sales@datasack.in</EuiLink>
                         <br />

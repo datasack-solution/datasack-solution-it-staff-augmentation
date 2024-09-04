@@ -23,6 +23,8 @@ import EnquiryModal from './EnquiryModal';
 import CustomPricing, { CustomTech } from './CustomPricing';
 import { useToastContext } from './toastContext';
 import PriceRangeResponsive from './PriceRangeResponsive';
+import { useCallusModalOpenedContext } from './callusModalContext';
+import useModalOnScroll from './usModalOpenOnFooterReached';
 
 
 
@@ -97,30 +99,66 @@ const processSelectedTechnologies = (selectedTechnologies: { [key: string]: numb
     return result;
 };
 
+let firstLoadForToast = true
+
 
 const PricingPage: FunctionComponent = () => {
     const [selectedTechnologies, setSelectedTechnologies] = useState<{ [key: string]: number }>({});
     const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+
+    const { isModelOpened, setModalOpened } = useCallusModalOpenedContext()
+
     const [openCategory, setOpenCategory] = useState<string | null>(null);
     const [openSubCategory, setOpenSubCategory] = useState<string | null>(null);
     const [isClient, setClient] = useState(false)
     const [paddingTop, setPaddingTop] = useState<number>(0);
     const slidingPanelRef = useRef<HTMLDivElement>(null);
     const [customTechs, setCustomTechs] = useState<CustomTech[]>([])
-    const { toasts, setToasts } = useToastContext()
+    const { setToasts } = useToastContext()
     const [duration, setDuration] = useState<number | number[]>(6);
+    useModalOnScroll(setIsModalOpen)
 
     const hasSelectedTechnologies = Object.values(selectedTechnologies).some((quantity) => quantity > 0);
+
+
 
     useEffect(() => {
         setClient(true)
     }, [])
 
     useEffect(() => {
+        console.log("is modal opened:", isModelOpened)
+    }, [isModelOpened])
+
+    useEffect(() => {
+        let showToastTimeout: NodeJS.Timeout | undefined;
+
         if (hasSelectedTechnologies || customTechs.length > 0) {
-            setToasts([])
+            firstLoadForToast = false;
+            setToasts([]);
         }
-    }, [selectedTechnologies, customTechs,hasSelectedTechnologies,setToasts])
+
+        if (firstLoadForToast) {
+            showToastTimeout = setTimeout(() => {
+                if (!hasSelectedTechnologies && customTechs.length === 0 && firstLoadForToast) {
+                    firstLoadForToast = false;
+                    setToasts([{
+                        id: 'pricing-toast',
+                        title: 'Do you want to know pricing?',
+                        text: <EuiButton style={{ backgroundColor: 'orange', color: 'white' }} onClick={() => document.getElementById('window-pricing')?.scrollIntoView({ behavior: 'smooth' })}>Get Pricing</EuiButton>
+                    }]);
+                }
+            }, 10000);
+        }
+
+        return () => {
+            if (showToastTimeout) {
+                clearTimeout(showToastTimeout);
+            }
+        };
+
+    }, [selectedTechnologies, customTechs, hasSelectedTechnologies, setToasts, isModelOpened, setModalOpened]);
+
 
     const techs = [...customTechs]
 
@@ -158,7 +196,7 @@ const PricingPage: FunctionComponent = () => {
 
 
     const triggerEnquiryModal = () => {
-        setIsModalOpen((prev) => !prev);
+        setIsModalOpen(!isModalOpen);
     };
 
 
@@ -213,9 +251,10 @@ const PricingPage: FunctionComponent = () => {
                     {isClient && <EnquiryModal closeModal={triggerEnquiryModal} isOpen={isModalOpen}
                         selectedTechnologies={processedData}
                         customTechs={techs}
-                        selectedRawTechData={selectedTechnologies} 
+                        selectedRawTechData={selectedTechnologies}
                         duration={duration}
-                        />}
+                        hasEnquiryWithSkillsets={hasSelectedTechnologies || customTechs.length > 0}
+                    />}
                     <div style={{ alignItems: 'center' }}>
                         {Object.entries(technologies).map(([mainCategory, subCategories], index) => (
                             <Fragment key={index}>
@@ -307,7 +346,9 @@ const PricingPage: FunctionComponent = () => {
                 <div className={styles.pricing_mobile_view}>
                     {isModalOpen &&
                         <EnquiryModal closeModal={triggerEnquiryModal} isOpen={isModalOpen} selectedTechnologies={processedData}
-                            selectedRawTechData={selectedTechnologies} customTechs={techs} duration={duration}/>}
+                            selectedRawTechData={selectedTechnologies} customTechs={techs} duration={duration}
+                            hasEnquiryWithSkillsets={hasSelectedTechnologies || customTechs.length > 0}
+                        />}
                     <div className={styles.pricingContainer}>
                         {Object.entries(technologies).map(([mainCategory, subCategories], idx) => (
                             <div key={idx} className={styles.mainCategory}>
@@ -380,19 +421,19 @@ const PricingPage: FunctionComponent = () => {
                 <div>
                     <CustomPricing onSelect={onSelect} customTechsOnReset={customTechs} />
                 </div>
-                
+
                 <div>
-                <div className={styles.pricing_mobile_view}>
-                    <p style={{ color: '#FFA500', fontSize: '20px' }}>Project Duration ?</p>
-                    <EuiSpacer size='m' />
-                </div>
-                <div className={styles.pricing_web_view}>
-                    <EuiTitle>
-                        <h3 style={{ color: '#FFA500' }}>Project Duration ?</h3>
-                    </EuiTitle>
-                    <EuiSpacer size="m" />
-                </div>
-                <PriceRangeResponsive onDurationChange={(d)=>{setDuration(d)}}/>
+                    <div className={styles.pricing_mobile_view}>
+                        <p style={{ color: '#FFA500', fontSize: '20px' }}>Project Duration ?</p>
+                        <EuiSpacer size='m' />
+                    </div>
+                    <div className={styles.pricing_web_view}>
+                        <EuiTitle>
+                            <h3 style={{ color: '#FFA500' }}>Project Duration ?</h3>
+                        </EuiTitle>
+                        <EuiSpacer size="m" />
+                    </div>
+                    <PriceRangeResponsive onDurationChange={(d) => { setDuration(d) }} />
                 </div>
 
                 <div style={{ paddingTop: `${paddingTop * 1.25}px` }}>

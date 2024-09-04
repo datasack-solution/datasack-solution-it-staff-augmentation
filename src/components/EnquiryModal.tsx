@@ -16,6 +16,7 @@ export interface EnquiryModalProps {
   selectedRawTechData: { [key: string]: number }
   customTechs: CustomTech[]
   duration:number|number[]
+  hasEnquiryWithSkillsets:boolean
 }
 
 const EnquiryModal: FunctionComponent<EnquiryModalProps> = ({
@@ -24,7 +25,8 @@ const EnquiryModal: FunctionComponent<EnquiryModalProps> = ({
   selectedTechnologies,
   selectedRawTechData,
   customTechs,
-  duration
+  duration,
+  hasEnquiryWithSkillsets
 }) => {
   const modalTitleId = useGeneratedHtmlId();
 
@@ -35,12 +37,12 @@ const EnquiryModal: FunctionComponent<EnquiryModalProps> = ({
         <EuiModal
           aria-labelledby={modalTitleId}
           onClose={() => closeModal(true)}
-          style={{ minWidth: '80vw', minHeight: '90vh', marginTop: '100px' }}
+          style={{ minWidth: '80vw', minHeight: '90vh' }}
         >
           <EuiModalHeader>
           </EuiModalHeader>
           <EuiModalBody >
-            <BookingForm selectedTechnologies={selectedTechnologies} selectedRawTechData={selectedRawTechData} customTechs={customTechs} duration={duration} />
+            <BookingForm hasEnquiryWithSkillsets={hasEnquiryWithSkillsets} selectedTechnologies={selectedTechnologies} selectedRawTechData={selectedRawTechData} customTechs={customTechs} duration={duration} />
           </EuiModalBody>
         </EuiModal>
       )}
