@@ -6,7 +6,7 @@ import { FunctionComponent } from "react";
 const benefitsSection1 = [
     {
         title: "Strategic Hiring Efficiency",
-        description: " Avoid excessive overhead costs by strategically hiring workers only when needed. This approach helps maintain financial efficiency and flexibility, ensuring you pay only for the necessary workforce during peak demands.",
+        description: "Reduce overhead costs with IT Resource Augmentation Services Riyadh* by hiring workers only when needed. This approach ensures financial efficiency and flexibility, paying only for essential workforce during peak demands.",
         backgroundImageUrl: '/benefits-webp-1000x684/DSS-Website-Elements_CV View.webp',
         alt:'it staff augmentation services riyadh'
     },
@@ -39,7 +39,7 @@ const benefitsSection2 = [
     },
     {
         title: "Onsite Efficiency",
-        description: "Ensure rapid availability of consultants onsite by optimizing travel logistics and processes. This streamlines operations, ensuring prompt support delivery for enhanced client satisfaction and project efficiency.",
+        description: "Optimize travel logistics with expert IT staff augmentation services Riyadh, ensuring rapid consultant availability and prompt support for enhanced client satisfaction and project efficiency.",
         backgroundImageUrl: '/benefits-webp-1000x684/DSS-Website-Elements_onsite.webp',
         alt:'it team augmentation services riyadh'
     },
@@ -60,7 +60,7 @@ const benefitsSection2 = [
 const Benefits: FunctionComponent = () => {
     return <div className="benefit-section-wrapper" id="benefit-section">
         <div className="benefit-left-section">
-            <h2>Benefits of <span style={{ color: 'orange' }}>IT Resource Augmentation</span> Services in Dammam and Riyadh</h2>
+            <h2>Benefits of <span style={{ color: 'orange' }}>Choosing Us</span> - Advanced Recruitment Agencies in Saudi Arabia Riyadh</h2>
             <p >IT Staff Augmentation Services in Dammam and Riyadh provided by Datasack Solutions are advantageous as they offer the following benefits.</p>
         </div>
         <div className="benefit-content-wrapper">

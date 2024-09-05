@@ -1,39 +1,30 @@
 import {
     EuiButton,
     EuiButtonIcon,
-    EuiFieldNumber,
-    EuiFieldText,
     EuiFlexGroup,
     EuiFlexItem,
-    EuiFormHelpText,
-    EuiFormRow,
     EuiHorizontalRule,
     EuiPage,
     EuiPageBody,
     EuiPanel,
-    EuiRange,
     EuiSpacer,
     EuiText,
-    EuiTitle,
-    useGeneratedHtmlId,
+    EuiTitle
 } from '@elastic/eui';
 import { Fragment, FunctionComponent, useEffect, useRef, useState } from 'react';
 import styles from '../styles/PricingMobile.module.css';
-import EnquiryModal from './EnquiryModal';
 import CustomPricing, { CustomTech } from './CustomPricing';
-import { useToastContext } from './toastContext';
+import EnquiryModal from './EnquiryModal';
 import PriceRangeResponsive from './PriceRangeResponsive';
 import { useCallusModalOpenedContext } from './callusModalContext';
+import { useToastContext } from './toastContext';
 import useModalOnScroll from './usModalOpenOnFooterReached';
-
-
 
 type Technologies = {
     [mainCategory: string]: {
         [subCategory: string]: string[];
     };
 };
-
 
 export const technologies: Technologies = {
     'Development Technologies': {

@@ -19,6 +19,13 @@ const Footer = () => {
                     <Link href={"https://www.datasack.in"}>
                         <Image width={150} height={150} src="/logo.png" alt="Company Logo" className={styles.footer_logo} />
                     </Link>
+                    <EuiFlexItem  grow={false} className={styles.footer_contact}>
+                    <EuiText style={{marginTop:'-50px'}}>
+                        <strong >ISO/IEC 27001:2022</strong>
+                        <br />
+                    </EuiText>
+                    <strong style={{textAlign:'center'}}>CERTIFIED</strong>
+                </EuiFlexItem>
                     </div>
                 </EuiFlexItem>
 
@@ -89,13 +96,7 @@ const Footer = () => {
                         <EuiLink href="tel:+966560858596" className={styles.footer_link}>+966-560858596</EuiLink>
                     </EuiText>
                 </EuiFlexItem>
-                <EuiFlexItem  grow={false} className={styles.footer_contact}>
-                    <EuiText >
-                        <strong >ISO/IEC 27001:2022</strong>
-                        <br />
-                    </EuiText>
-                    <strong style={{textAlign:'center'}}>CERTIFIED</strong>
-                </EuiFlexItem>
+
             </EuiFlexGroup>
             <EuiSpacer size='l' />
         </div>

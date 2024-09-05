@@ -10,16 +10,12 @@ import HeaderComponent from "@/components/Header";
 import ManagedServices from "@/components/ManagedServices";
 import PricingPage from "@/components/Pricing";
 import { useToastContext } from "@/components/toastContext";
-import { EuiCard, EuiFlexGroup, EuiFlexItem, EuiGlobalToastList, EuiPage, EuiPageBody, EuiSpacer } from "@elastic/eui";
+import { EuiCard, EuiGlobalToastList, EuiPage, EuiPageBody, EuiSpacer } from "@elastic/eui";
 import Head from "next/head";
-import Image from "next/image";
-import { Fragment, FunctionComponent, useEffect } from "react";
+import { Fragment, FunctionComponent } from "react";
 
 const Home: FunctionComponent = () => {
   const { toasts, setToasts } = useToastContext()
-
-
-
 
   return (
     <Fragment>
@@ -65,7 +61,7 @@ const Home: FunctionComponent = () => {
             </div>
             <div className="title-wrap">
               <p className="subtitle">Need Tech Talent Quickly?</p>
-              <h1 className="title">Explore IT Staff Augmentation Services in Dammam and Riyadh</h1>
+              <h1 className="title">Cost-effective recruitment agency in <span style={{color:'orange'}}>Riyadh</span></h1>
             </div>
             <EuiGlobalToastList
               side="right"

@@ -50,7 +50,7 @@ const AnalyticsWeb = () =>{
     </div>
 
     <EuiFlexGroup gutterSize="l" justifyContent="center">
-    <EuiFlexItem style={{ margin: '10px' }} grow={false}>
+    <EuiFlexItem style={{ margin: '10px',width:'500px' }} grow={false}>
   <EuiCard
     style={{ 
       padding: '0px', 
@@ -74,10 +74,10 @@ const AnalyticsWeb = () =>{
       <p>{analyticsIcons1row[0].description}</p>
     </div>
   </EuiCard>
-</EuiFlexItem>
+    </EuiFlexItem>
       <EuiFlexItem style={{ margin: '10px' }} grow={false}>
       </EuiFlexItem>
-      <EuiFlexItem style={{ margin: '10px' }} grow={false}>
+      <EuiFlexItem style={{ margin: '10px',width:'500px' }} grow={false}>
   <EuiCard
     style={{ 
       padding: '0px', 
@@ -108,7 +108,7 @@ const AnalyticsWeb = () =>{
       <EuiFlexItem style={{ margin: '10px' }} grow={false}>
         {/* Empty Space */}
       </EuiFlexItem>
-      <EuiFlexItem style={{ margin: '10px' }} grow={false}>
+      <EuiFlexItem style={{ margin: '10px',width:'500px' }} grow={false}>
   <EuiCard
     style={{ 
       padding: '0px', 
@@ -139,7 +139,7 @@ const AnalyticsWeb = () =>{
     </EuiFlexGroup>
 
     <EuiFlexGroup gutterSize="l" justifyContent="center">
-    <EuiFlexItem style={{ margin: '10px' }} grow={false}>
+    <EuiFlexItem style={{ margin: '10px',width:'500px' }} grow={false}>
   <EuiCard
     style={{ 
       padding: '0px', 
@@ -166,7 +166,7 @@ const AnalyticsWeb = () =>{
 </EuiFlexItem>
       <EuiFlexItem style={{ margin: '10px' }} grow={false}>
       </EuiFlexItem>
-      <EuiFlexItem style={{ margin: '10px' }} grow={false}>
+      <EuiFlexItem style={{ margin: '10px',width:'500px' }} grow={false}>
   <EuiCard
     style={{ 
       padding: '0px', 
