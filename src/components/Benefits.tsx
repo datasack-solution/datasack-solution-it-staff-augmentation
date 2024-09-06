@@ -6,13 +6,13 @@ import { FunctionComponent } from "react";
 const benefitsSection1 = [
     {
         title: "Strategic Hiring Efficiency",
-        description: "Reduce overhead costs with IT Resource Augmentation Services Riyadh* by hiring workers only when needed. This approach ensures financial efficiency and flexibility, paying only for essential workforce during peak demands.",
+        description: "Reduce overhead costs with IT Resource Augmentation Services Riyadh by hiring workers only when needed. This approach ensures financial efficiency and flexibility, paying only for essential workforce during peak demands.",
         backgroundImageUrl: '/benefits-webp-1000x684/DSS-Website-Elements_CV View.webp',
         alt:'Recruitment Agency in Riyadh'
     },
     {
         title: "Flexible Workforce",
-        description: "IT team augmentation services in Riyadh increases financial flexibility by converting fixed costs to variable costs, hiring workers for specific durations. This ensures optimal budget management, paying for necessary expertise.",
+        description: "IT team augmentation services Riyadh increases financial flexibility by converting fixed costs to variable costs, hiring workers for specific durations. This ensures optimal budget management, paying for necessary expertise.",
         backgroundImageUrl: '/benefits-webp-1000x684/DSS-Website-Elements_Work force.webp',
         alt:'Recruitment agencies in Saudi Arabia Riyadh'
     },
@@ -24,7 +24,7 @@ const benefitsSection1 = [
     },
     {
         title: "Rapid Expansion",
-        description: "Accelerate growth by scaling up IT staff augmentation services in Riyadh to meet demand efficiently. This proactive approach ensures timely service delivery, enhancing customer satisfaction and seizing market opportunities.",
+        description: "Accelerate growth by scaling up IT staff augmentation services Riyadh to meet demand efficiently. This proactive approach ensures timely service delivery, enhancing customer satisfaction and seizing market opportunities.",
         backgroundImageUrl: '/benefits-webp-1000x684/DSS-Website-Elements_Rapid Expansion.webp',
         alt:'Recruitment agencies in Saudi Arabia Riyadh'
     },
@@ -51,7 +51,7 @@ const benefitsSection2 = [
     },
     {
         title: 'Resource Deployment',
-        description: "IT staff augmentation services in Riyadh deploy our resources in India to meet business needs. This strategic advantage ensures swift adaptation to market demands, enhancing operational agility and client satisfaction.",
+        description: "IT staff augmentation services Riyadh deploy our resources in India to meet business needs. This strategic advantage ensures swift adaptation to market demands, enhancing operational agility and client satisfaction.",
         backgroundImageUrl: '/benefits-webp-1000x684/DSS-Website-Elements_Resource Deployment.webp',
         alt:'Recruitment agencies in Saudi Arabia Riyadh'
     }
@@ -61,7 +61,7 @@ const Benefits: FunctionComponent = () => {
     return <div className="benefit-section-wrapper" id="benefit-section">
         <div className="benefit-left-section">
             <h2>Benefits of <span style={{ color: 'orange' }}>Choosing Us</span> - Advanced Recruitment Agencies in Saudi Arabia Riyadh</h2>
-            <p >IT Staff Augmentation Services in Riyadh provided by Datasack Solutions are advantageous as they offer the following benefits.</p>
+            <p >IT Staff Augmentation Services Riyadh provided by Datasack Solutions are advantageous as they offer the following benefits.</p>
         </div>
         <div className="benefit-content-wrapper">
             <EuiFlexGroup alignItems="center" justifyContent="center" responsive={true} wrap>
