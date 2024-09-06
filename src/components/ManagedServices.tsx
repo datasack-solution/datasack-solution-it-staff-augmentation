@@ -48,7 +48,7 @@ const ManagedServices = () => {
         <EuiSpacer />
         <EuiText>
           <p style={{ textAlign: 'center', fontSize: '20px' }}>
-          DataSack assembles your dream team on-demand, providing expertise without the hassle of full-time hiring. Whether you're looking for IT outsourcing Riyadh or need to contract resources for specific projects or skills, we ensure you get the right talent exactly when you need it.
+          DataSack assembles your dream team on-demand, providing expertise without the hassle of full-time hiring. Whether you&apos;re looking for IT outsourcing Riyadh or need to contract resources for specific projects or skills, we ensure you get the right talent exactly when you need it.
           </p>
         </EuiText>
       </div>
