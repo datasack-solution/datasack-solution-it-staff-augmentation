@@ -44,7 +44,7 @@ const AnalyticsWeb = () =>{
         style={{ border: '1px solid #e0e0e0', borderRadius: '8px' }}
       >
         <p style={{ fontSize: '28px', textAlign: 'center' }}>
-          Augment your software team with IT professionals via IT Team Augmentation Services in Dammam and Riyadh.
+          Augment your software team with IT professionals via IT Team Augmentation Services Riyadh.
         </p>
       </EuiCard>
     </div>

@@ -26,51 +26,51 @@ const settings: Settings = {
 const benefits = [
     {
         title: "Strategic Hiring Efficiency",
-        description: " Avoid excessive overhead costs by strategically hiring workers only when needed. This approach helps maintain financial efficiency and flexibility, ensuring you pay only for the necessary workforce during peak demands.",
-        alt:'it staff augmentation services riyadh',
+        description: "Reduce overhead costs with IT Resource Augmentation Services Riyadh* by hiring workers only when needed. This approach ensures financial efficiency and flexibility, paying only for essential workforce during peak demands.",
         backgroundImageUrl: '/benefits-webp-1000x684/DSS-Website-Elements_CV View.webp',
+        alt:'Recruitment Agency in Riyadh'
     },
     {
         title: "Flexible Workforce",
-        description: "IT team augmentation services in Dammam and Riyadh increases financial flexibility by converting fixed costs to variable costs, hiring workers for specific durations. This ensures optimal budget management, paying for necessary expertise.",
-        alt:'it resource augmentation services riyadh',
+        description: "IT team augmentation services in Riyadh increases financial flexibility by converting fixed costs to variable costs, hiring workers for specific durations. This ensures optimal budget management, paying for necessary expertise.",
         backgroundImageUrl: '/benefits-webp-1000x684/DSS-Website-Elements_Work force.webp',
+        alt:'Recruitment agencies in Saudi Arabia Riyadh'
     },
     {
         title: "Precision Staffing",
-        description: " Reduce staffing costs with just-in-time recruitment, ensuring resources deploy precisely when needed. This approach minimizes overheads tied to idle workforce capacity, enhancing financial flexibility and efficiency.",
-        alt:'it staff augmentation services riyadh',
+        description: "Reduce staffing costs with just-in-time recruitment, ensuring resources deploy precisely when needed. This approach minimizes overheads tied to idle workforce capacity, enhancing financial flexibility and efficiency.",
         backgroundImageUrl: '/benefits-webp-1000x684/DSS-Website-Elements_precision staffing.webp',
+        alt:'Recruitment Agency in Riyadh'
     },
     {
         title: "Rapid Expansion",
-        description: "Accelerate growth by scaling up IT staff augmentation services in Dammam and Riyadh to meet demand efficiently. This proactive approach ensures timely service delivery, enhancing customer satisfaction and seizing market opportunities.",
-        alt:'it team augmentation services riyadh',
+        description: "Accelerate growth by scaling up IT staff augmentation services in Riyadh to meet demand efficiently. This proactive approach ensures timely service delivery, enhancing customer satisfaction and seizing market opportunities.",
         backgroundImageUrl: '/benefits-webp-1000x684/DSS-Website-Elements_Rapid Expansion.webp',
+        alt:'Recruitment agencies in Saudi Arabia Riyadh'
     },
     {
         title: "Core Focus",
-        description: "Our IT resource augmentation services in Dammam and Riyadh optimize productivity by outsourcing non-core tasks to contingent workers, freeing resources for core business activities and enhancing operational efficiency for our clients.",
-        alt:'it staff augmentation services riyadh',
+        description: "Our IT resource augmentation services Riyadh optimize productivity by outsourcing non-core tasks to contingent workers, freeing resources for core business activities and enhancing operational efficiency for our clients.",
         backgroundImageUrl: '/benefits-webp-1000x684/DSS-Website-Elements_Core Focus.webp',
+        alt:'Recruitment Agency in Riyadh'
     },
     {
         title: "Onsite Efficiency",
-        description: "Ensure rapid availability of consultants onsite by optimizing travel logistics and processes. This streamlines operations, ensuring prompt support delivery for enhanced client satisfaction and project efficiency.",
+        description: "Optimize travel logistics with expert IT staff augmentation services Riyadh, ensuring rapid consultant availability and prompt support for enhanced client satisfaction and project efficiency.",
         backgroundImageUrl: '/benefits-webp-1000x684/DSS-Website-Elements_onsite.webp',
-        alt:'it team augmentation services riyadh'
+        alt:'Recruitment agencies in Saudi Arabia Riyadh'
     },
     {
         title: "Smooth Visa Logistics",
         description: "Utilizing our expert team in logistics and visa processing, we collaborate closely to ensure an efficient and seamless experience for our clients. This approach streamlines operations and enhances client satisfaction.",
-        alt:'it staff augmentation services riyadh',
         backgroundImageUrl: '/benefits-webp-1000x684/DSS-Website-Elements_Visa.webp',
+        alt:'Recruitment Agency in Riyadh'
     },
     {
         title: 'Resource Deployment',
-        description: "IT staff augmentation services in Dammam and Riyadh deploy our resources in India to meet business needs. This strategic advantage ensures swift adaptation to market demands, enhancing operational agility and client satisfaction.",
-        alt:'it resource augmentation services riyadh',
+        description: "IT staff augmentation services in Riyadh deploy our resources in India to meet business needs. This strategic advantage ensures swift adaptation to market demands, enhancing operational agility and client satisfaction.",
         backgroundImageUrl: '/benefits-webp-1000x684/DSS-Website-Elements_Resource Deployment.webp',
+        alt:'Recruitment agencies in Saudi Arabia Riyadh'
     }
 ]
 

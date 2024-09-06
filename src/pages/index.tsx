@@ -20,16 +20,25 @@ const Home: FunctionComponent = () => {
   return (
     <Fragment>
       <Head>
-        <title>IT Staff Augmentation Services in Dammam and Riyadh | Fill Your Skill Gaps Fast</title>
+        <title>Best Recruitment Agency in Riyadh | Advanced Staffing Solutions</title>
         <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1" />
-        <meta title="title" content="IT Staff Augmentation Services Riyadh | Fill Your Skill Gaps Fast" />
-        <meta name="description" content="Get the right talent at the right price. Find DataSack's IT Staff Augmentation Services in Dammam and Riyadh. Resolve skill shortages for project excellence." />
+        <meta title="title" content="Best Recruitment Agency in Riyadh | Advanced Staffing Solutions" />
+        <meta name="description" content="Partner with us, one of the top Recruitment agencies in Saudi Arabia Riyadh, to scale your workforce and fill critical positions with expert hiring strategies." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta property="og:title" content="IT Staff Augmentation Services in Dammam and Riyadh | Fill Your Skill Gaps Fast" />
-        <meta property="og:description" content="Get the right talent at the right price. Find DataSack's IT Staff Augmentation Services in Dammam and Riyadh. Resolve skill shortages for project excellence." />
+        <meta property="og:title" content="Best Recruitment Agency in Riyadh | Advanced Staffing Solutions" />
+        <meta property="og:description" content="Partner with us, one of the top Recruitment agencies in Saudi Arabia Riyadh, to scale your workforce and fill critical positions with expert hiring strategies." />
         <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="IT Staff Augmentation Services in Dammam and Riyadh | Fill Your Skill Gaps Fast" />
+        <meta property="og:site_name" content="Best Recruitment Agency in Riyadh | Advanced Staffing Solutions" />
+        <meta property="og:url" content="https://itstaffaugmentation.datasack.in/" />
+        <meta property="og:image" content="https://itstaffaugmentation.datasack.in/logo.png" />
+        <meta property="og:image:width" content="1000" />
+        <meta property="og:image:height" content="1000" />
         <meta property="og:locale" content="en_US" />
+        <meta property="twitter:title" content="Best Recruitment Agency in Riyadh | Advanced Staffing Solutions" />
+        <meta property="twitter:description" content="Partner with us, one of the top Recruitment agencies in Saudi Arabia Riyadh, to scale your workforce and fill critical positions with expert hiring strategies." />
+        <meta property="twitter:card" content="summary_large_image"/>
+        <meta property="twitter:image" content="https://itstaffaugmentation.datasack.in/logo.png"/>
+        <meta property="twitter:image:alt" content="Partner with us, one of the top Recruitment agencies in Saudi Arabia Riyadh, to scale your workforce and fill critical positions with expert hiring strategies."/>
         <link rel="icon" href="/favicon.ico" />
         <link rel="preload" href="/benefits-webp-1000x684/DSS-Website-Elements_CV View.webp" as="image" type="image/webp" />
         <link rel="preload" href="/benefits-webp-1000x684/DSS-Website-Elements_Work force.webp" as="image" type="image/webp" />
@@ -56,7 +65,7 @@ const Home: FunctionComponent = () => {
 
           <div>
             <div className="image-container">
-              <img className="background-img" src="/background_vector.webp" alt="It staff augmentation services riyadh" />
+              <img className="background-img" src="/background_vector.webp" alt="Recruitment Agency in Riyadh" />
               <div className="image-overlay"></div>
             </div>
             <div className="title-wrap">
@@ -77,7 +86,7 @@ const Home: FunctionComponent = () => {
               <div style={{ paddingBottom: '50px' }}>
                 <EuiCard hasBorder={true}
                   title=''
-                  description="Augment your software team with IT professionals via IT Team Augmentation Services in Dammam and Riyadh."
+                  description="Augment your software team with IT professionals via IT Team Augmentation Services Riyadh."
                 >
                   <AnalyticsSlider />
                 </EuiCard>
@@ -86,8 +95,8 @@ const Home: FunctionComponent = () => {
 
             <div id="benefit_mobile_view">
               <div className="benefit-left-section benefit-left-section-mobile">
-                <h2 style={{ fontSize: '25px', paddingTop: '10px' }}>Benefits of <span style={{ color: 'orange' }}>IT Resource Augmentation </span>Services in Dammam and Riyadh</h2>
-                <p style={{ fontSize: '15px' }}>IT Staff Augmentation Services in Dammam and Riyadh provided by Datasack Solutions are advantageous as they offer the following benefits.</p>
+                <h2 style={{ fontSize: '25px', paddingTop: '10px' }}>Benefits of <span style={{ color: 'orange' }}>IT Resource Augmentation </span>Services Riyadh</h2>
+                <p style={{ fontSize: '15px' }}>IT Staff Augmentation Services Riyadh provided by Datasack Solutions are advantageous as they offer the following benefits.</p>
               </div>
               <BenefitsSlider />
             </div>
@@ -119,7 +128,6 @@ const Home: FunctionComponent = () => {
               <EuiSpacer />
             </div>
           </div>
-
 
           <Footer />
           <div id="footer-div"></div>

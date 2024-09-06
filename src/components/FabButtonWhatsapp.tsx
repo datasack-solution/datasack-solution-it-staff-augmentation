@@ -6,7 +6,7 @@ const FabButton:FunctionComponent = () =>{
   const phoneNumber = `+966560858596`
   const message =`
     Hi there, 
-    Explore IT Staff Augmentation Services - in Dammam and Riyadh
+    Explore IT Staff Augmentation Services Riyadh
 
     Check out our company - (https://www.datasack.in)
 
