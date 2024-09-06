@@ -109,7 +109,7 @@ const Home: FunctionComponent = () => {
             <div id="benefit_mobile_view">
               <div className="benefit-left-section benefit-left-section-mobile">
                 <h2 style={{ fontSize: '25px', paddingTop: '10px' }}>Managed <span style={{ color: 'orange' }}>Services </span></h2>
-                <p style={{ fontSize: '15px' }}>DataSack assembles your dream team on-demand, providing expertise without the hassle of full-time hiring. Contract resources as needed for specific projects or skills.</p>
+                <p style={{ fontSize: '15px' }}>DataSack assembles your dream team on-demand, providing expertise without the hassle of full-time hiring. Whether you're looking for IT outsourcing Riyadh or need to contract resources for specific projects or skills, we ensure you get the right talent exactly when you need it.</p>
               </div>
             </div>
             <ManagedServices />
