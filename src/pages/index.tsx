@@ -30,14 +30,14 @@ const Home: FunctionComponent = () => {
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Best Recruitment Agency in Riyadh | Advanced Staffing Solutions" />
         <meta property="og:url" content="https://itstaffaugmentation.datasack.in/" />
-        <meta property="og:image" content="https://itstaffaugmentation.datasack.in/logo.png" />
+        <meta property="og:image" content="https://itstaffaugmentation.datasack.in/card_image.webp" />
         <meta property="og:image:width" content="1000" />
         <meta property="og:image:height" content="1000" />
         <meta property="og:locale" content="en_US" />
         <meta property="twitter:title" content="Best Recruitment Agency in Riyadh | Advanced Staffing Solutions" />
         <meta property="twitter:description" content="Partner with us, one of the top Recruitment agencies in Saudi Arabia Riyadh, to scale your workforce and fill critical positions with expert hiring strategies." />
         <meta property="twitter:card" content="summary_large_image"/>
-        <meta property="twitter:image" content="https://itstaffaugmentation.datasack.in/logo.png"/>
+        <meta property="twitter:image" content="https://itstaffaugmentation.datasack.in/card_image.webp"/>
         <meta property="twitter:image:alt" content="Partner with us, one of the top Recruitment agencies in Saudi Arabia Riyadh, to scale your workforce and fill critical positions with expert hiring strategies."/>
         <link rel="icon" href="/favicon.ico" />
         <link rel="preload" href="/benefits-webp-1000x684/DSS-Website-Elements_CV View.webp" as="image" type="image/webp" />
