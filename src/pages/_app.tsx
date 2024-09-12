@@ -33,7 +33,7 @@ export default function App({ Component, pageProps }: AppProps) {
       /> */}
     <Component {...pageProps} />
     {/* <GoogleTagManager gtmId={'AW-16583886159'}/> */}
-    <GoogleTagManager gtmId={'GTM-PJGGKTVQ'}/>
+    {/* <GoogleTagManager gtmId={'GTM-PJGGKTVQ'}/> */}
   </EuiProvider>
   </IsCallusModalOpenedProvider>
   </ToastProvider>;
