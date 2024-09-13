@@ -4,6 +4,7 @@ import "@/styles/globals.css";
 import { EuiProvider } from '@elastic/eui';
 import '@elastic/eui/dist/eui_theme_light.css';
 import type { AppProps } from "next/app";
+import { GoogleTagManager } from '@next/third-parties/google';
 
 export default function App({ Component, pageProps }: AppProps) {
 
@@ -17,7 +18,7 @@ export default function App({ Component, pageProps }: AppProps) {
       /> */}
     <Component {...pageProps} />
     {/* <GoogleTagManager gtmId={'AW-16583886159'}/> */}
-    {/* <GoogleTagManager gtmId={'GTM-PJGGKTVQ'}/> */}
+    <GoogleTagManager gtmId={'GTM-PJGGKTVQ'}/>
   </EuiProvider>
   </IsCallusModalOpenedProvider>
   </ToastProvider>;
