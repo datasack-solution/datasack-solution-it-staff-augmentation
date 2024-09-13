@@ -12,7 +12,7 @@ export default function Document() {
                   })(window,document,'script','dataLayer','GTM-PJGGKTVQ');`
         }}></script>
 
-        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16583886159">
+        {/* <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16583886159">
         </script>
         <script dangerouslySetInnerHTML={{
           __html:` window.dataLayer = window.dataLayer || [];
@@ -21,17 +21,17 @@ export default function Document() {
 
           gtag('config', 'AW-16583886159');`
         }}>
-        </script>
+        </script> */}
 
       </Head>
       <body>
         <Main />
         <NextScript />
-        <noscript
+        {/* <noscript
           dangerouslySetInnerHTML={{
             __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=AW-16583886159" height="0" width="0" style="display: none; visibility: hidden;" />`,
           }}
-        />
+        /> */}
 
       <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PJGGKTVQ"
         height="0" width="0" style={{display:'none',visibility:'hidden'}}></iframe></noscript>
