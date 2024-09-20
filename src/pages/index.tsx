@@ -65,7 +65,7 @@ const Home: FunctionComponent = () => {
 
           <div>
             <div className="image-container">
-              <img className="background-img" src="/background_vector.webp" alt="Recruitment Agency in Riyadh" />
+              <img className="background-img" src="/background_vector.webp" alt="Top recruitment agency in Riyadh specializing in IT staffing" />
               <div className="image-overlay"></div>
             </div>
             <div className="title-wrap">

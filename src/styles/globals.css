@@ -181,7 +181,7 @@
       text-transform: uppercase;
       background-color: black;
       color: white;
-      box-shadow: orange 10px 10px 50px 0;
+      box-shadow: white 10px 10px 50px 0;
       background-color: rgba(0, 0, 0, 0.3);
       backdrop-filter: blur(2px);
       border-radius: 0px;
@@ -262,9 +262,13 @@
     /* box-shadow: 0.25rem 0.25rem 0.5rem rgba(2, 64, 234, 0.35); */
     border: 1.5px ridge rgb(255, 8, 0);
     /* border: 1.5px ridge rgb(115, 73, 242); */
-    background-color: black;
+    /* background-color: black; */
     border-radius: 15px;
     color: white;
+  }
+
+  .card:hover{
+    background-color: black;
   }
 
   .card__description {
