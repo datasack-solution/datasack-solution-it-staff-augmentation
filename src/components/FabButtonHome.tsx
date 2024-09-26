@@ -11,7 +11,7 @@ const FabButtonHome:FunctionComponent = () =>{
     target="_blank"
     rel="noopener noreferrer"
   >
-    <Image width={300} height={300} src='/home1.png' alt="home" /> 
+    <Image width={300} height={300} src='/Icons/home.webp' alt="home" /> 
   </a>
 }
 

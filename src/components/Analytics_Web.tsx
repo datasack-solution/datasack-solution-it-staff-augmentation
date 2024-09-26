@@ -64,7 +64,7 @@ const AnalyticsWeb = () =>{
   >
     <div style={{ alignItems: 'center',padding:'20px',marginTop:'-15px' }}>
       <Image
-        src={'/contract_staffing.png'} 
+        src={'/Icons/contract_staffing.webp'} 
         alt={analyticsIcons1row[0].title} 
         width={50} 
         height={50} 
@@ -91,7 +91,7 @@ const AnalyticsWeb = () =>{
   >
     <div style={{ alignItems: 'center',padding:'20px',marginTop:'-15px' }}>
       <Image 
-        src={'/remote_hiring.png'} 
+        src={'/Icons/remote_hiring.webp'} 
         alt={analyticsIcons1row[0].title} 
         width={50} 
         height={50} 
@@ -122,7 +122,7 @@ const AnalyticsWeb = () =>{
   >
     <div style={{ alignItems: 'center',padding:'20px',marginTop:'-15px' }}>
       <Image 
-        src={'/key_statistics.png'} 
+        src={'/Icons/key_statistics.webp'} 
         alt={analyticsIcons2row[0].title} 
         width={50} 
         height={50} 
@@ -153,7 +153,7 @@ const AnalyticsWeb = () =>{
   >
     <div style={{ alignItems: 'center',padding:'20px',marginTop:'-15px' }}>
       <Image 
-        src={'/payroll_outsourcing.png'} 
+        src={'/Icons/payroll_outsourcing.webp'} 
         alt={analyticsIcons3row[0].title} 
         width={50} 
         height={50} 
@@ -180,7 +180,7 @@ const AnalyticsWeb = () =>{
   >
     <div style={{ alignItems: 'center',padding:'20px',marginTop:'-15px' }}>
       <Image 
-        src={'/global_mobility.png'} 
+        src={'/Icons/global_mobility.webp'} 
         alt={analyticsIcons3row[1].title} 
         width={50} 
         height={50} 

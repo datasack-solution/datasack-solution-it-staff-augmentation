@@ -20,35 +20,35 @@ const Home: FunctionComponent = () => {
   return (
     <Fragment>
       <Head>
-        <title>Best Recruitment Agency in Riyadh | Advanced Staffing Solutions</title>
+        <title>Best Recruitment Agency in Riyadh for IT Staffing Solutions</title>
         <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1" />
-        <meta title="title" content="Best Recruitment Agency in Riyadh | Advanced Staffing Solutions" />
-        <meta name="description" content="Partner with us, one of the top Recruitment agencies in Saudi Arabia Riyadh, to scale your workforce and fill critical positions with expert hiring strategies." />
+        <meta title="title" content="Best Recruitment Agency in Riyadh for IT Staffing Solutions" />
+        <meta name="description" content="We are one of the top recruitment agencies in Saudi Arabia Riyadh for expert IT staff augmentation services." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta property="og:title" content="Best Recruitment Agency in Riyadh | Advanced Staffing Solutions" />
-        <meta property="og:description" content="Partner with us, one of the top Recruitment agencies in Saudi Arabia Riyadh, to scale your workforce and fill critical positions with expert hiring strategies." />
+        <meta property="og:title" content="Best Recruitment Agency in Riyadh for IT Staffing Solutions" />
+        <meta property="og:description" content="We are one of the top recruitment agencies in Saudi Arabia Riyadh for expert IT staff augmentation services." />
         <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="Best Recruitment Agency in Riyadh | Advanced Staffing Solutions" />
+        <meta property="og:site_name" content="Best Recruitment Agency in Riyadh for IT Staffing Solutions" />
         <meta property="og:url" content="https://itstaffaugmentation.datasack.in/" />
-        <meta property="og:image" content="https://itstaffaugmentation.datasack.in/card_image.webp" />
+        <meta property="og:image" content="https://itstaffaugmentation.datasack.in/Icons/card_logo.webp" />
         <meta property="og:image:width" content="1000" />
         <meta property="og:image:height" content="1000" />
         <meta property="og:locale" content="en_US" />
-        <meta property="twitter:title" content="Best Recruitment Agency in Riyadh | Advanced Staffing Solutions" />
-        <meta property="twitter:description" content="Partner with us, one of the top Recruitment agencies in Saudi Arabia Riyadh, to scale your workforce and fill critical positions with expert hiring strategies." />
+        <meta property="twitter:title" content="Best Recruitment Agency in Riyadh for IT Staffing Solutions" />
+        <meta property="twitter:description" content="We are one of the top recruitment agencies in Saudi Arabia Riyadh for expert IT staff augmentation services." />
         <meta property="twitter:card" content="summary_large_image"/>
-        <meta property="twitter:image" content="https://itstaffaugmentation.datasack.in/card_image.webp"/>
-        <meta property="twitter:image:alt" content="Partner with us, one of the top Recruitment agencies in Saudi Arabia Riyadh, to scale your workforce and fill critical positions with expert hiring strategies."/>
+        <meta property="twitter:image" content="https://itstaffaugmentation.datasack.in/Icons/card_logo.webp"/>
+        <meta property="twitter:image:alt" content="We are one of the top recruitment agencies in Saudi Arabia Riyadh for expert IT staff augmentation services."/>
         <link rel="icon" href="/favicon.ico" />
-        <link rel="preload" href="/benefits-webp-1000x684/DSS-Website-Elements_CV View.webp" as="image" type="image/webp" />
-        <link rel="preload" href="/benefits-webp-1000x684/DSS-Website-Elements_Work force.webp" as="image" type="image/webp" />
-        <link rel="preload" href="/benefits-webp-1000x684/DSS-Website-Elements_precision staffing.webp" as="image" type="image/webp" />
-        <link rel="preload" href="/benefits-webp-1000x684/DSS-Website-Elements_Rapid Expansion.webp" as="image" type="image/webp" />
-        <link rel="preload" href="/benefits-webp-1000x684/DSS-Website-Elements_Core Focus.webp" as="image" type="image/webp" />
-        <link rel="preload" href="/benefits-webp-1000x684/DSS-Website-Elements_onsite.webp" as="image" type="image/webp" />
-        <link rel="preload" href="/benefits-webp-1000x684/DSS-Website-Elements_Visa.webp" as="image" type="image/webp" />
-        <link rel="preload" href="/benefits-webp-1000x684/DSS-Website-Elements_Resource Deployment.webp" as="image" type="image/webp" />
-        <link rel="preload" href="/background_vector.webp" as="image" type="image/webp" />
+        <link rel="preload" href="/Images/strategic_hiring_efficiency.webp" as="image" type="image/webp" />
+        <link rel="preload" href="/Images/flexible_workforce.webp" as="image" type="image/webp" />
+        <link rel="preload" href="/Images/precision_staffing.webp" as="image" type="image/webp" />
+        <link rel="preload" href="/Images/rapid_expansion.webp" as="image" type="image/webp" />
+        <link rel="preload" href="/Images/core_focus.webp" as="image" type="image/webp" />
+        <link rel="preload" href="/Images/onsite_efficiency.webp" as="image" type="image/webp" />
+        <link rel="preload" href="/Images/smooth_visa_logistics.webp" as="image" type="image/webp" />
+        <link rel="preload" href="/Images/resource_deployment.webp" as="image" type="image/webp" />
+        <link rel="preload" href="/Images/background.webp" as="image" type="image/webp" />
       </Head>
       <EuiPage >
         <EuiPageBody>
@@ -65,7 +65,7 @@ const Home: FunctionComponent = () => {
 
           <div>
             <div className="image-container">
-              <img className="background-img" src="/background_vector.webp" alt="Top recruitment agency in Riyadh specializing in IT staffing" />
+              <img className="background-img" src="Images/background.webp" alt="Top recruitment agency in Riyadh specializing in IT staffing" />
               <div className="image-overlay"></div>
             </div>
             <div className="title-wrap">

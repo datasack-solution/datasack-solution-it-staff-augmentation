@@ -15,31 +15,31 @@ const analyticsIcons=[
     id:1,
     title:'Contract Staffing',
     description:'Access Skilled IT contractors to meet your project-based needs',
-    image:"/contract_staffing.png"
+    image:"/Icons/contract_staffing.webp"
   },
   {
     id:2,
     title:'Remote Hiring',
     description:'Source and onboard talented IT professionals from anywhere in the world',
-    image:"/remote_hiring.png"
+    image:"/Icons/remote_hiring.webp"
   },
   {
     id: 3,
     title: "Key Statistics",
     description: 'Experts ready in 2 weeks, 8% available to join instantly—rated 4.9/5 on Clutch',
-    image:"/key_statistics.png"
+    image:"/Icons/key_statistics.webp"
   },
   {
     id:4,
     title:'Payroll Outsourcing',
     description:'Simplify payroll administration and ensure compliance',
-    image:"/payroll_outsourcing.png"
+    image:"/Icons/payroll_outsourcing.webp"
   },
   {
     id:5,
     title:'Global Mobility',
     description:'Facilitate seamless employee relocation and cross-based assignments',
-    image:"/global_mobility.png"
+    image:"/Icons/global_mobility.webp"
   }
 ]
 
