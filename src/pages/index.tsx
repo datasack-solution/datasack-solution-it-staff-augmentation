@@ -70,7 +70,7 @@ const Home: FunctionComponent = () => {
             </div>
             <div className="title-wrap">
               <p className="subtitle">Need Tech Talent Quickly?</p>
-              <h1 className="title">Cost-effective recruitment agency in <span style={{color:'orange'}}>Riyadh</span></h1>
+              <h1 className="title">Cost-effective IT Staffing Agency <span style={{color:'orange'}}>Riyadh</span></h1>
             </div>
             <EuiGlobalToastList
               side="right"
@@ -86,7 +86,7 @@ const Home: FunctionComponent = () => {
               <div style={{ paddingBottom: '50px' }}>
                 <EuiCard hasBorder={true}
                   title=''
-                  description="Augment your software team with IT professionals via IT Team Augmentation Services Riyadh."
+                  description="Augment your software team with IT professionals from the IT outsourcing company Riyadh."
                 >
                   <AnalyticsSlider />
                 </EuiCard>
@@ -95,7 +95,7 @@ const Home: FunctionComponent = () => {
 
             <div id="benefit_mobile_view">
               <div className="benefit-left-section benefit-left-section-mobile">
-                <h2 style={{ fontSize: '25px', paddingTop: '10px' }}>Benefits of <span style={{ color: 'orange' }}>IT Resource Augmentation </span>Services Riyadh</h2>
+                <h2 style={{ fontSize: '25px', paddingTop: '10px' }}>Benefits of <span style={{ color: 'orange' }}>Choosing Us - </span>Advanced Recruitment Agency in Riyadh</h2>
                 <p style={{ fontSize: '15px' }}>IT Staff Augmentation Services Riyadh provided by Datasack Solutions are advantageous as they offer the following benefits.</p>
               </div>
               <BenefitsSlider />
@@ -109,7 +109,7 @@ const Home: FunctionComponent = () => {
             <div id="benefit_mobile_view">
               <div className="benefit-left-section benefit-left-section-mobile">
                 <h2 style={{ fontSize: '25px', paddingTop: '10px' }}>Managed <span style={{ color: 'orange' }}>Services </span></h2>
-                <p style={{ fontSize: '15px' }}>DataSack assembles your dream team on-demand, providing expertise without the hassle of full-time hiring. Whether you&apos;re looking for IT outsourcing Riyadh or need to contract resources for specific projects or skills, we ensure you get the right talent exactly when you need it.</p>
+                <p style={{ fontSize: '15px' }}>DataSack assembles your dream team on demand, providing expertise without the hassle of full-time hiring. Whether you&apos;re looking for a Recruitment Agency in Riyadh or need to contract resources for specific projects or skills, we ensure you get the right talent exactly when you need it.</p>
               </div>
             </div>
             <ManagedServices />

@@ -48,7 +48,7 @@ const ManagedServices = () => {
         <EuiSpacer />
         <EuiText>
           <p style={{ textAlign: 'center', fontSize: '20px' }}>
-          DataSack assembles your dream team on-demand, providing expertise without the hassle of full-time hiring. Whether you&apos;re looking for IT outsourcing Riyadh or need to contract resources for specific projects or skills, we ensure you get the right talent exactly when you need it.
+          DataSack assembles your dream team on demand, providing expertise without the hassle of full-time hiring. Whether you&apos;re looking for a Recruitment Agency in Riyadh or need to contract resources for specific projects or skills, we ensure you get the right talent exactly when you need it.
           </p>
         </EuiText>
       </div>
@@ -58,7 +58,7 @@ const ManagedServices = () => {
 
       <EuiFlexGroup className={styles.container} responsive={true} wrap justifyContent="center" alignItems="center">
         {[
-          { cardIndex: 0, title: '1. Talent Sourcing', description: 'Recruiting skilled individuals from our network, conducting interviews, and assessing qualifications.' },
+          { cardIndex: 0, title: '1. Talent Sourcing', description: 'Our recruitment agency in Saudi specializes in recruiting skilled individuals, conducting interviews, and assessing qualifications.' },
           { cardIndex: 1, title: '2. Onboarding & Integration', description: 'Ensuring contracted resources understand your culture, goals, and expectations.' },
           { cardIndex: 2, title: '3. Performance Monitoring', description: 'Tracking resource performance throughout the contract to meet your expectations.' },
         ].map((card, index) => (
@@ -80,9 +80,9 @@ const ManagedServices = () => {
       <EuiSpacer size="xl" />
       <EuiFlexGroup className={styles.container} responsive={true} wrap justifyContent="center" alignItems="center">
         {[
-          { cardIndex: 3, title: '4. Administrative Support', description: 'Managing payroll, benefits, work permits, logistics, and other HR-related tasks is part of our comprehensive IT outsourcing Riyadh services.' },
+          { cardIndex: 3, title: '4. Administrative Support', description: 'Managing payroll, benefits, work permits, logistics, and other HR-related tasks is part of our comprehensive IT Outsourcing Company Riyadh.' },
           { cardIndex: 4, title: '5. Problem Resolution', description: 'Addressing issues and resolving conflicts to ensure smooth communication.' },
-          { cardIndex: 5, title: '6. Continuous Communication', description: 'Maintaining open communication with clients and contracted resources to promptly address issues and keep everyone aligned.' },
+          { cardIndex: 5, title: '6. Continuous Communication', description: 'Our recruitment agency in Saudi maintains open communication with clients and contracted resources to promptly address issues and keep everyone aligned.' },
         ].map((card, index) => (
           <EuiFlexItem key={index}>
             <div ref={el => { cardRefs.current[card.cardIndex] = el; }} className={styles.card}>
