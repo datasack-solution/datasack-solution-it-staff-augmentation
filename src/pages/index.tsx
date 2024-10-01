@@ -22,20 +22,20 @@ const Home: FunctionComponent = () => {
       <Head>
         <title>Best Recruitment Agency in Riyadh for IT Staffing Solutions</title>
         <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1" />
-        <meta title="title" content="Best Recruitment Agency in Riyadh for IT Staffing Solutions" />
-        <meta name="description" content="We are one of the top recruitment agencies in Saudi Arabia Riyadh for expert IT staff augmentation services." />
+        <meta title="title" content="IT Staffing Agency Riyadh for your Project Requirements" />
+        <meta name="description" content="Looking for a recruitment agency in Riyadh? Our IT Staffing enhances your workforce & meets project needs." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta property="og:title" content="Best Recruitment Agency in Riyadh for IT Staffing Solutions" />
-        <meta property="og:description" content="We are one of the top recruitment agencies in Saudi Arabia Riyadh for expert IT staff augmentation services." />
+        <meta property="og:title" content="IT Staffing Agency Riyadh for your Project Requirements" />
+        <meta property="og:description" content="Looking for a recruitment agency in Riyadh? Our IT Staffing enhances your workforce & meets project needs." />
         <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="Best Recruitment Agency in Riyadh for IT Staffing Solutions" />
+        <meta property="og:site_name" content="IT Staffing Agency Riyadh for your Project Requirements" />
         <meta property="og:url" content="https://itstaffaugmentation.datasack.in/" />
         <meta property="og:image" content="https://itstaffaugmentation.datasack.in/Icons/card_logo.webp" />
         <meta property="og:image:width" content="1000" />
         <meta property="og:image:height" content="1000" />
         <meta property="og:locale" content="en_US" />
-        <meta property="twitter:title" content="Best Recruitment Agency in Riyadh for IT Staffing Solutions" />
-        <meta property="twitter:description" content="We are one of the top recruitment agencies in Saudi Arabia Riyadh for expert IT staff augmentation services." />
+        <meta property="twitter:title" content="IT Staffing Agency Riyadh for your Project Requirements" />
+        <meta property="twitter:description" content="Looking for a recruitment agency in Riyadh? Our IT Staffing enhances your workforce & meets project needs." />
         <meta property="twitter:card" content="summary_large_image"/>
         <meta property="twitter:image" content="https://itstaffaugmentation.datasack.in/Icons/card_logo.webp"/>
         <meta property="twitter:image:alt" content="Discover the advantages of an IT staffing agency Riyadh to enhance your project delivery."/>
@@ -68,10 +68,12 @@ const Home: FunctionComponent = () => {
               <img className="background-img" src="Images/background.webp" alt="Top IT Staffing Agency Riyadh specializing in IT staffing, providing tailored solutions to meet your business needs efficiently." />
               <div className="image-overlay"></div>
             </div>
+
             <div className="title-wrap">
               <p className="subtitle">Need Tech Talent Quickly?</p>
               <h1 className="title">Cost-effective IT Staffing Agency <span style={{color:'orange'}}>Riyadh</span></h1>
             </div>
+            
             <EuiGlobalToastList
               side="right"
               toasts={toasts}
