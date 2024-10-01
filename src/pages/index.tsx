@@ -20,7 +20,7 @@ const Home: FunctionComponent = () => {
   return (
     <Fragment>
       <Head>
-        <title>Best Recruitment Agency in Riyadh for IT Staffing Solutions</title>
+        <title>IT Staffing Agency Riyadh for your Project Requirements</title>
         <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1" />
         <meta title="title" content="IT Staffing Agency Riyadh for your Project Requirements" />
         <meta name="description" content="Looking for a recruitment agency in Riyadh? Our IT Staffing enhances your workforce & meets project needs." />
@@ -73,7 +73,7 @@ const Home: FunctionComponent = () => {
               <p className="subtitle">Need Tech Talent Quickly?</p>
               <h1 className="title">Cost-effective IT Staffing Agency <span style={{color:'orange'}}>Riyadh</span></h1>
             </div>
-            
+
             <EuiGlobalToastList
               side="right"
               toasts={toasts}
