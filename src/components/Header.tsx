@@ -73,7 +73,9 @@ const HeaderComponent: FunctionComponent = () => {
         <HeaderContainer>
           <EuiFlexItem grow={false} className="logo-item">
             <Link href={"https://www.datasack.in"}>
-            <Image width={150} height={150}  className='logo-item' src='/Icons/logo.webp' alt='Best recruitment agency in Riyadh for IT talent solutions' />
+            <Image width={150} height={150} style={{paddingTop:'10px', justifyContent:'center'}}
+            className='logo-item' src='/Icons/logo.webp' 
+            alt='Best IT staff augmentation services Riyadh for IT talent solutions.' />
             </Link>
           </EuiFlexItem>
           <EuiFlexItem grow={false} className="nav-items">

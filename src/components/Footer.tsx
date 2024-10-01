@@ -17,7 +17,7 @@ const Footer = () => {
                 <EuiFlexItem grow={false} >
                     <div className={styles.footer_logo_item}>
                     <Link href={"https://www.datasack.in"}>
-                        <Image width={150} height={150} src="/Icons/logo.webp" alt="Company Logo" className={styles.footer_logo} />
+                        <Image width={150} height={150} src="/Icons/logo.webp" alt="Best IT staff augmentation services Riyadh for IT talent solutions." className={styles.footer_logo} />
                     </Link>
                     <EuiFlexItem  grow={false} className={styles.footer_contact}>
                     <EuiText style={{marginTop:'-50px'}}>

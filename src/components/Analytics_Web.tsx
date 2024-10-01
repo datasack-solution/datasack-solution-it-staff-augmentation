@@ -6,12 +6,14 @@ const analyticsIcons1row=[
     {
       id:1,
       title:'Contract Staffing',
-      description:'Access Skilled IT contractors to meet your project-based needs'
+      description:'Access Skilled IT contractors to meet your project-based needs',
+      alt:'Optimize your workforce using an IT outsourcing company Riyadh to fill critical skill gaps.'
     },
     {
       id:3,
       title:'Remote Hiring',
-      description:'Source and onboard talented IT professionals from anywhere in the world'
+      description:'Source and onboard talented IT professionals from anywhere in the world',
+      alt:'Improve project outcomes with a recruitment agency in Saudi that provides the right resources.'
     },
   ]
 
@@ -19,7 +21,8 @@ const analyticsIcons1row=[
     {
       id: 2,
       title: "Key Statistics",
-      description: 'Experts ready in 2 weeks, 8% available to join instantly—rated 4.9/5 on Clutch'
+      description: 'Experts ready in 2 weeks, 8% available to join instantly—rated 4.9/5 on Clutch',
+      alt:'Achieve your project milestones with a recruitment agency in Saudi designed for flexibility.'
     },
   ]
 
@@ -27,12 +30,14 @@ const analyticsIcons1row=[
     {
       id:1,
       title:'Payroll Outsourcing',
-      description:'Simplify payroll administration and ensure compliance'
+      description:'Simplify payroll administration and ensure compliance',
+      alt:'Cut costs and improve service delivery with a recruitment agency in Saudi.'
     },
     {
       id:3,
       title:'Global Mobility',
-      description:'Facilitate seamless employee relocation and cross-based assignments'
+      description:'Facilitate seamless employee relocation and cross-based assignments',
+      alt:'Transform your business model through a recruitment agency in Saudi for cost-effective solutions.'
     }
   ]
 
@@ -65,7 +70,7 @@ const AnalyticsWeb = () =>{
     <div style={{ alignItems: 'center',padding:'20px',marginTop:'-15px' }}>
       <Image
         src={'/Icons/contract_staffing.webp'} 
-        alt={analyticsIcons1row[0].title} 
+        alt={analyticsIcons1row[0].alt} 
         width={50} 
         height={50} 
         style={{width:'35px',height:"35px"}}
@@ -92,7 +97,7 @@ const AnalyticsWeb = () =>{
     <div style={{ alignItems: 'center',padding:'20px',marginTop:'-15px' }}>
       <Image 
         src={'/Icons/remote_hiring.webp'} 
-        alt={analyticsIcons1row[0].title} 
+        alt={analyticsIcons1row[1].alt} 
         width={50} 
         height={50} 
         style={{width:'35px',height:"35px"}}
@@ -123,7 +128,7 @@ const AnalyticsWeb = () =>{
     <div style={{ alignItems: 'center',padding:'20px',marginTop:'-15px' }}>
       <Image 
         src={'/Icons/key_statistics.webp'} 
-        alt={analyticsIcons2row[0].title} 
+        alt={analyticsIcons2row[0].alt} 
         width={50} 
         height={50} 
         style={{width:'35px',height:"35px"}}
@@ -154,7 +159,7 @@ const AnalyticsWeb = () =>{
     <div style={{ alignItems: 'center',padding:'20px',marginTop:'-15px' }}>
       <Image 
         src={'/Icons/payroll_outsourcing.webp'} 
-        alt={analyticsIcons3row[0].title} 
+        alt={analyticsIcons3row[0].alt} 
         width={50} 
         height={50} 
         style={{width:'35px',height:"35px"}}
@@ -181,7 +186,7 @@ const AnalyticsWeb = () =>{
     <div style={{ alignItems: 'center',padding:'20px',marginTop:'-15px' }}>
       <Image 
         src={'/Icons/global_mobility.webp'} 
-        alt={analyticsIcons3row[1].title} 
+        alt={analyticsIcons3row[1].alt} 
         width={50} 
         height={50} 
         style={{width:'35px',height:"35px"}}

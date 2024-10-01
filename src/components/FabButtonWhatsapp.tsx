@@ -32,7 +32,7 @@ const FabButton:FunctionComponent = () =>{
     target="_blank"
     rel="noopener noreferrer"
   >
-    <Image width={300} height={300} src='/Icons/whatsapp.webp' alt="WhatsApp" /> 
+    <Image width={300} height={300} src='/Icons/whatsapp.webp' alt="Maximize your resources with IT staff augmentation services Riyadh that focus on your core competencies." /> 
   </a>
 }
 

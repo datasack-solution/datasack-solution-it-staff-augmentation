@@ -38,7 +38,7 @@ const Home: FunctionComponent = () => {
         <meta property="twitter:description" content="We are one of the top recruitment agencies in Saudi Arabia Riyadh for expert IT staff augmentation services." />
         <meta property="twitter:card" content="summary_large_image"/>
         <meta property="twitter:image" content="https://itstaffaugmentation.datasack.in/Icons/card_logo.webp"/>
-        <meta property="twitter:image:alt" content="We are one of the top recruitment agencies in Saudi Arabia Riyadh for expert IT staff augmentation services."/>
+        <meta property="twitter:image:alt" content="Discover the advantages of an IT staffing agency Riyadh to enhance your project delivery."/>
         <link rel="icon" href="/favicon.ico" />
         <link rel="preload" href="/Images/strategic_hiring_efficiency.webp" as="image" type="image/webp" />
         <link rel="preload" href="/Images/flexible_workforce.webp" as="image" type="image/webp" />
@@ -65,7 +65,7 @@ const Home: FunctionComponent = () => {
 
           <div>
             <div className="image-container">
-              <img className="background-img" src="Images/background.webp" alt="Top recruitment agency in Riyadh specializing in IT staffing" />
+              <img className="background-img" src="Images/background.webp" alt="Top IT Staffing Agency Riyadh specializing in IT staffing, providing tailored solutions to meet your business needs efficiently." />
               <div className="image-overlay"></div>
             </div>
             <div className="title-wrap">

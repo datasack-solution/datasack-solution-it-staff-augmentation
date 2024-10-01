@@ -15,31 +15,36 @@ const analyticsIcons=[
     id:1,
     title:'Contract Staffing',
     description:'Access Skilled IT contractors to meet your project-based needs',
-    image:"/Icons/contract_staffing.webp"
+    image:"/Icons/contract_staffing.webp",
+    alt:'Optimize your workforce using an IT outsourcing company Riyadh to fill critical skill gaps.'
   },
   {
     id:2,
     title:'Remote Hiring',
     description:'Source and onboard talented IT professionals from anywhere in the world',
-    image:"/Icons/remote_hiring.webp"
+    image:"/Icons/remote_hiring.webp",
+    alt:'Improve project outcomes with a recruitment agency in Saudi that provides the right resources.'
   },
   {
     id: 3,
     title: "Key Statistics",
     description: 'Experts ready in 2 weeks, 8% available to join instantly—rated 4.9/5 on Clutch',
-    image:"/Icons/key_statistics.webp"
+    image:"/Icons/key_statistics.webp",
+    alt:'Achieve your project milestones with a recruitment agency in Saudi designed for flexibility.'
   },
   {
     id:4,
     title:'Payroll Outsourcing',
     description:'Simplify payroll administration and ensure compliance',
-    image:"/Icons/payroll_outsourcing.webp"
+    image:"/Icons/payroll_outsourcing.webp",
+    alt:'Cut costs and improve service delivery with a recruitment agency in Saudi.'
   },
   {
     id:5,
     title:'Global Mobility',
     description:'Facilitate seamless employee relocation and cross-based assignments',
-    image:"/Icons/global_mobility.webp"
+    image:"/Icons/global_mobility.webp",
+    alt:'Transform your business model through a recruitment agency in Saudi for cost-effective solutions.'
   }
 ]
 
@@ -65,7 +70,7 @@ const cardNodes = analyticsIcons.map(function (item, index) {
         <div style={{ alignItems: 'center', padding: '20px', marginTop: '-15px' }}>
           <Image
             src={item.image}
-            alt={item.title}
+            alt={item.alt}
             width={50}
             height={50}
             style={{ width: '35px', height: "35px",margin:'auto' }}

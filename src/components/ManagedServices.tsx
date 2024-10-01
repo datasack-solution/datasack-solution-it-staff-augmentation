@@ -81,7 +81,7 @@ const ManagedServices = () => {
       <EuiFlexGroup className={styles.container} responsive={true} wrap justifyContent="center" alignItems="center">
         {[
           { cardIndex: 3, title: '4. Administrative Support', description: 'Managing payroll, benefits, work permits, logistics, and other HR-related tasks is part of our comprehensive IT Outsourcing Company Riyadh.' },
-          { cardIndex: 4, title: '5. Problem Resolution', description: 'Addressing issues and resolving conflicts to ensure smooth communication.' },
+          { cardIndex: 4, title: '5. Problem Resolution', description: 'Addressing issues and resolving conflicts through IT staff augmentation services Riyadh to ensure smooth communication.' },
           { cardIndex: 5, title: '6. Continuous Communication', description: 'Our recruitment agency in Saudi maintains open communication with clients and contracted resources to promptly address issues and keep everyone aligned.' },
         ].map((card, index) => (
           <EuiFlexItem key={index}>
