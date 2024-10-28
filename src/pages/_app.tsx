@@ -4,7 +4,7 @@ import "@/styles/globals.css";
 import { EuiProvider } from '@elastic/eui';
 import '@elastic/eui/dist/eui_theme_light.css';
 import type { AppProps } from "next/app";
-import { GoogleTagManager } from '@next/third-parties/google';
+import { GoogleTagManager,GoogleAnalytics } from '@next/third-parties/google';
 
 export default function App({ Component, pageProps }: AppProps) {
 
@@ -16,6 +16,7 @@ export default function App({ Component, pageProps }: AppProps) {
         dataLayerName="it-staff-augmentation-datalayer"   
         key="ga-analytics"
       /> */}
+    <GoogleTagManager gtmId={'GTM-N8CGPQFR'}/>
     <Component {...pageProps} />
     {/* <GoogleTagManager gtmId={'AW-16583886159'}/> */}
     {/* <GoogleTagManager gtmId={'GTM-PJGGKTVQ'}/> */}
