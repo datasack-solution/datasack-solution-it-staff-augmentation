@@ -1,7 +1,9 @@
+import { GoogleTagManager } from "@next/third-parties/google";
 import { Head, Html, Main, NextScript } from "next/document";
 export default function Document() {
   return (
     <Html lang="en">
+    <GoogleTagManager gtmId={'GTM-N8CGPQFR'}/>
       <Head>
         {/* when using next/script, it is not reflected in header section. */}
         {/* <script dangerouslySetInnerHTML={{

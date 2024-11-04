@@ -16,7 +16,7 @@ export default function App({ Component, pageProps }: AppProps) {
         dataLayerName="it-staff-augmentation-datalayer"   
         key="ga-analytics"
       /> */}
-    <GoogleTagManager gtmId={'GTM-N8CGPQFR'}/>
+    {/* <GoogleTagManager gtmId={'GTM-N8CGPQFR'}/> */}
     <Component {...pageProps} />
     {/* <GoogleTagManager gtmId={'AW-16583886159'}/> */}
     {/* <GoogleTagManager gtmId={'GTM-PJGGKTVQ'}/> */}
