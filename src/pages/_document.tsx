@@ -3,8 +3,8 @@ import { Head, Html, Main, NextScript } from "next/document";
 export default function Document() {
   return (
     <Html lang="en">
-    <GoogleTagManager gtmId={'GTM-N8CGPQFR'}/>
       <Head>
+      <GoogleTagManager gtmId={'GTM-N8CGPQFR'}/>
         {/* when using next/script, it is not reflected in header section. */}
         {/* <script dangerouslySetInnerHTML={{
           __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -50,8 +50,8 @@ export default function Document() {
 
           {/* use below */}
 
-        {/* <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N8CGPQFR"
-          height="0" width="0" style={{ display: 'none', visibility: 'hidden' }}></iframe></noscript> */}
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N8CGPQFR"
+          height="0" width="0" style={{ display: 'none', visibility: 'hidden' }}></iframe></noscript>
 
 
       </body>
