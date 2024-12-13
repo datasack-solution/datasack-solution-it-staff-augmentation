@@ -49,6 +49,7 @@ const Home: FunctionComponent = () => {
         <link rel="preload" href="/Images/smooth_visa_logistics.webp" as="image" type="image/webp" />
         <link rel="preload" href="/Images/resource_deployment.webp" as="image" type="image/webp" />
         <link rel="preload" href="/Images/background.webp" as="image" type="image/webp" />
+        <meta name="google-site-verification" content="X6_De9tfjQ1_QgR2GMz9shcd-RE74XCM9owyWQFV9eY" />
       </Head>
       <EuiPage >
         <EuiPageBody>
